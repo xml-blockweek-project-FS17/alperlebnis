@@ -1,0 +1,80 @@
+<hostelrooms xsi:noNamespaceSchemaLocation="roomdb_schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <room name='Edelweiss'>
+        <price currency="CHF">100.00</price>
+        <beds>2</beds>
+        <image></image>
+        <description>
+            Gemütliches helles Zimmer. Hier vergisst man schnell die Mühen des Tages.
+        </description>
+        <bookings>
+            <booking>
+                <!--Use of xml-date to ensure that it is comparable in XPATH -->
+                <startdate>2017-09-24</startdate>
+                <enddate>2017-09-27</enddate>
+                <email>marc.nussbaumer@stud.hslu.ch</email>
+                <paidprice>250.00</paidprice>
+                <bookingaddress>
+                    <salutation>Herr</salutation>
+                    <firstname>Marc</firstname>
+                    <lastname>Nussbaumer</lastname>
+                    <address>Hochrütiring 10</address>
+                    <zipcode>6005</zipcode>
+                    <state>Luzern</state>
+                    <country>Schweiz</country>
+                </bookingaddress>
+            </booking>
+            <booking>
+                <!--Use of xml-date to ensure that it is comparable in XPATH -->
+                <startdate>2017-09-28</startdate>
+                <enddate>2017-09-29</enddate>
+                <email>max@muster.ch</email>
+                <paidprice>200.00</paidprice>
+                <bookingaddress>
+                    <salutation>Herr</salutation>
+                    <firstname>Max</firstname>
+                    <lastname>Muster</lastname>
+                    <address>Musterstrasse 10</address>
+                    <zipcode>6005</zipcode>
+                    <state>Luzern</state>
+                    <country>Schweiz</country>
+                </bookingaddress>	
+            </booking>
+        </bookings>		
+    </room>
+    <room name='Enzian'>
+        <price currency="CHF">100.00</price>
+        <beds>2</beds>
+        <image></image>
+        <description>
+            Stilvoll eingerichtetes Zimmer. Hier werden Sie schlafen wie im siebten Himmel.
+        </description>
+        <bookings></bookings>
+    </room>
+    <room name='Alperose'>
+        <price currency="CHF">200.00</price>
+        <beds>4</beds>
+        <image></image>
+        <description>
+            Praktisches Familienzimmer mit Elternbett und einem Etagenbett für die Kinder.
+        </description>
+        <bookings></bookings>
+    </room>
+    <room name='Krokus'>
+        <price currency="CHF">400.00</price>
+        <beds>10</beds>
+        <image></image>
+        <description>
+            Massenschlag mit praktischer Raumaufteilung für Gruppen bis zu 10 Personen.
+        </description>
+        <bookings></bookings>
+    </room>
+    <room name='Glockenblume'>
+        <price currency="CHF">150.00</price>
+        <beds>1</beds>
+        <image></image>
+        <description>
+            In warmen Farbtönen eingerichtetes Einzelzimmer.
+        </description>
+        <bookings></bookings>
+    </room>
+</hostelrooms>

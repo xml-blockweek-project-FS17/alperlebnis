@@ -1,0 +1,59 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="activities">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="user">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="activity"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="activity">
+        <xs:complexType>
+            <xs:sequence>  
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="provider" type="xs:string"/>
+                <xs:element name="activitydate" type="xs:date"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="image" type="xs:anyURI"/>
+                <xs:element ref="contact" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="price" type="activityprice"/>
+                <xs:element name="signupstart" type="xs:date"/>
+                <xs:element name="signupend" type="xs:date"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:positiveInteger"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="contact">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="phone" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>    
+    </xs:element>
+    
+    <!--Definition of more specific datatypes -->
+    <xs:complexType name="activityprice">
+        <xs:simpleContent>
+          <xs:extension base="xs:float">
+            <xs:attribute name="currency" type="currency" />
+          </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="currency">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CHF"/>
+            <xs:enumeration value="EUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
