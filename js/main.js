@@ -1,8 +1,3 @@
-function init() {
-    doXSLT('data/roomdb.xml', 'pages/roomdb.xsl', 'content-tabs-1');
-    doXSLT('data/activitydb.xml', 'pages/activitydb.xsl', 'content-tabs-2');
-}
-
 function loadXMLDoc(filename)
 {
     if (window.ActiveXObject)
