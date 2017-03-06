@@ -7,12 +7,28 @@
             <description>
                 Die heile Bergwelt bei einem Schweizer Bergbauern erleben und selbst Hand anlegen.
             </description>
-            <image></image>
+            <image>data/pictures/Stall_Bes.jpg</image>
             <contact>
                 <phone>+41 41 777 77 77</phone>
                 <email>bauern.verein@hslu.ch</email>
             </contact>
             <price currency="CHF">200.00</price>
+            <signupstart>2017-09-10</signupstart>
+            <signupend>2017-09-10</signupend>
+        </activity>
+		<activity ID="2">
+            <title>Goldwaschen</title>
+            <provider>Napf Gold Erlebnis</provider>
+            <activitydate>2017-10-05</activitydate>
+            <description>
+                Gold waschen wie im wilden Westen
+            </description>
+            <image>data/pictures/gold_wash.jpg</image>
+            <contact>
+                <phone>+41 41 777 77 77</phone>
+                <email>gold.napf@hslu.ch</email>
+            </contact>
+            <price currency="CHF">80.00</price>
             <signupstart>2017-09-10</signupstart>
             <signupend>2017-09-10</signupend>
         </activity>
