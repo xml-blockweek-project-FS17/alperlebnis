@@ -6,16 +6,27 @@ var users = {
 	"user": "user",
 };
 
+function needLogin(){
+	if(document.cookie != ""){
+		location.href='admin.html';
+	} else {
+		doXSLT('pages/logIn.xml', 'pages/logIn.xsl', 'content');
+	}
+}
+
 function login(){
 	var user = document.getElementById("username");
 	var pw = document.getElementById("password");
 	
 	if(users[user.value] == pw.value){
-		this.loggedInUser = user.value;
+		document.cookie = user.value;
+		location.href='admin.html';
 	} else {
 		alert("Wrong credentials");
 	}
-	if(this.loggedInUser){
-		location.href='admin.html';
-	}
+}
+
+function logout(){
+	document.cookie = "";
+	location.href='index.html';
 }
