@@ -1,1 +1,21 @@
+<activities xsi:noNamespaceSchemaLocation="activitydb_schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <user name="bauer">
+        <activity ID="1">
+            <title>Stallbesichtigung</title>
+            <provider>Bauern Verein HSLU</provider>
+            <activitydate>2017-09-20</activitydate>
+            <description>
+                Die heile Bergwelt bei einem Schweizer Bergbauern erleben und selbst Hand anlegen.
+            </description>
+            <image></image>
+            <contact>
+                <phone>+41 41 777 77 77</phone>
+                <email>bauern.verein@hslu.ch</email>
+            </contact>
+            <price currency="CHF">200.00</price>
+            <signupstart>2017-09-10</signupstart>
+            <signupend>2017-09-10</signupend>
+        </activity>
+    </user>
+</activities>
 
