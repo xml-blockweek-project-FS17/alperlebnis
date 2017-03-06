@@ -2,7 +2,10 @@
 body {
     font-family: "Open Sans";
     font-size: 12px;
-    width:970px;
+    width: auto;
+	text-align: center;
+	margin-left: 18%;
+	margin-right: 18%;
 }
 
 h1 {

@@ -1,3 +1,8 @@
+function showWelcome()
+{
+	doXSLT('pages/home.xml','pages/home.xsl', 'content');
+}
+
 function loadXMLDoc(filename)
 {
     if (window.ActiveXObject)
@@ -40,8 +45,6 @@ function doXSLT(xmlfilename, xslfilename, elementname)
         myNode.appendChild(resultDocument);
     }
 }
-
-
 
 function loadXMLPage(url) {
     var xhttp = new XMLHttpRequest();
@@ -123,12 +126,7 @@ function setElementContent(element, content) {
     }
 }
 
-
-
-
-
 function loadXMLPage1(xmlpath, xslpath) {
-
     var xml = loadXml(xmlpath);
     var xsl = loadXml(xslpath);
     var element = document.getElementById('content');
@@ -137,10 +135,7 @@ function loadXMLPage1(xmlpath, xslpath) {
 
 }
 
-
 function loadXMLPage2(xmlpath, xslpath) {
-
-
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         var content = document.getElementById('content');
