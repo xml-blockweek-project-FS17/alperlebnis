@@ -18,7 +18,7 @@ function doXSLT(xmlfilename, xslfilename, elementname)
 {
     xml = loadXMLDoc(xmlfilename);
     xsl = loadXMLDoc(xslfilename);
-    var myNode = document.getElementById("content");
+    var myNode = document.getElementById(elementname);
     // code for IE
     if (window.ActiveXObject || xhttp.responseType == "msxml-document")
     {
