@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="js/main.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onload="init()">
+<body>
 
-	<div style="width:100%"><img src="data/pictures/header.png" width="970" height="150" alt="Alperlebnis+"/></div>
-
-	<div id="navigation" style="border: 1px solid black;">
-		<button type="button" id="navLink1" href="#" onclick="loadXMLPage('pages/home.xml');">Home</button>
-		<button id="navLink2" href="#" onclick="doXSLT('data/roomdb.xml', 'pages/roomdb.xsl', 'content')">Zimmerangebote</button>
-		<button id="navLink1" href="#" onclick="doXSLT('data/activitydb.xml', 'pages/activitydb.xsl', 'content')">Angebotsverwaltung</button>
-		<button id="navLink2" href="#" onclick="loadXMLPage('pages/admin.xml');">Adminbereich</button>
+	<img src="data/pictures/header.png"></img>
+	<div id="navigation">
+		<button type="button" id="navLink1" href="#" onclick="loadXMLPage('pages/home.xml','pages/home.xsl');">Home</button>
+		<button id="navLink2" href="#" onclick="loadXMLPage('pages/rooms.xml','pages/rooms.xsl');">Zimmerangebote</button>
+		<button id="navLink1" href="#" onclick="loadXMLPage('pages/activitymanagement.xml','pages/activitymanagement.xsl');">Angebotsverwaltung</button>
+		<button id="navLink2" href="#" onclick="loadXMLPage('pages/admin.xml','pages/admin.xsl');">Adminbereich</button>
 	</div>
 	
 	<div id="content">
@@ -20,6 +18,107 @@
 	
 	<footer>
 	</footer>
+
+<script type="text/javascript">
+function loadXml(url) {
+    var xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        try { xhr.responseType = "msxml-document"; } catch (ex) {}
+    } else {
+        throw new Error("Failed to create XMLHTTP request object.");
+    }
+    xhr.open("GET", url, false);
+    xhr.send();
+    return xhr.responseXML;
+}
+
+function transformXml(xml, xsl) {
+    var xsltProcessor;
+    if (typeof xml === "string") xml = stringToXml(xml);
+    if (typeof xsl === "string") xsl = stringToXml(xsl);
+    if (window.XSLTProcessor) {
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xsl);
+        return xsltProcessor.transformToFragment(xml, document);
+    } else if ("ActiveXObject" in window) {
+        return xml.documentElement.transformNode(xsl);
+    } else {
+        throw new Error("Failed to transform XML.");
+    }
+}
+
+function xmlToString(input) {
+    var str;
+    if (window.XMLSerializer) {
+        return (new XMLSerializer()).serializeToString(input);
+    } else if (input.xml) {
+        return input.xml;
+    } else {
+        throw new Error("Failed to convert input to string.");
+    }
+    return str;
+}
+
+function stringToXml(input) {
+    var xml;
+    if ("ActiveXObject" in window) {
+        xml = new ActiveXObject("Microsoft.XMLDOM");
+        xml.async=false;
+        xml.loadXML(input);
+        return xml;
+    } else if (window.DOMParser) {
+        return (new DOMParser()).parseFromString(input, "text/xml");
+    } else {
+        throw new Error("Failed to convert input to XML document.");
+    }
+}
+
+function setElementContent(element, content) {
+    element.innerHTML = '';
+    if (content.nodeType) { 
+        element.appendChild(content);
+    } else {
+        element.innerHTML = content;
+    }
+}
+
+
+
+
+
+function loadXMLPage(xmlpath, xslpath) {
+	
+	var xml = loadXml(xmlpath);
+    var xsl = loadXml(xslpath);
+	var element = document.getElementById('content');
+	
+	element.innerHTML = transformXml(xml,xsl);
+	
+}
+
+
+function loadXMLPage(xmlpath, xslpath) {
+	
+	
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+	var content = document.getElementById('content');
+	var xsl = loadXml(xslpath);
+	content.innerHTML = "";
+    if (this.readyState == 4 && this.status == 200) {
+      content.innerHTML = this.responseText;
+      content.innerHTML = '<br>Some new content!';
+      content.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+</script>
 
 </body>
 </html>
