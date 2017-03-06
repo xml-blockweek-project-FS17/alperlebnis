@@ -2,7 +2,7 @@
     <room name='Edelweiss'>
         <price currency="CHF">100.00</price>
         <beds>2</beds>
-        <image></image>
+        <image>data/pictures/edelweiss-room.jpg</image>
         <description>
             Gemütliches helles Zimmer. Hier vergisst man schnell die Mühen des Tages.
         </description>
@@ -37,14 +37,14 @@
                     <zipcode>6005</zipcode>
                     <state>Luzern</state>
                     <country>Schweiz</country>
-                </bookingaddress>	
+                </bookingaddress>
             </booking>
-        </bookings>		
+        </bookings>
     </room>
     <room name='Enzian'>
         <price currency="CHF">100.00</price>
         <beds>2</beds>
-        <image></image>
+        <image>data/pictures/enzian-room.jpg</image>
         <description>
             Stilvoll eingerichtetes Zimmer. Hier werden Sie schlafen wie im siebten Himmel.
         </description>
@@ -53,7 +53,7 @@
     <room name='Alperose'>
         <price currency="CHF">200.00</price>
         <beds>4</beds>
-        <image></image>
+        <image>data/pictures/Alpenrose-room.jpg</image>
         <description>
             Praktisches Familienzimmer mit Elternbett und einem Etagenbett für die Kinder.
         </description>
@@ -62,7 +62,7 @@
     <room name='Krokus'>
         <price currency="CHF">400.00</price>
         <beds>10</beds>
-        <image></image>
+        <image>data/pictures/Krokus-room.jpg</image>
         <description>
             Massenschlag mit praktischer Raumaufteilung für Gruppen bis zu 10 Personen.
         </description>
@@ -71,7 +71,7 @@
     <room name='Glockenblume'>
         <price currency="CHF">150.00</price>
         <beds>1</beds>
-        <image></image>
+        <image>data/pictures/Glockenblume-room.jpg</image>
         <description>
             In warmen Farbtönen eingerichtetes Einzelzimmer.
         </description>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="js/main.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
+<body onload="init()">
 
-	<h1>Alpeerlebnis +</h1>
-
+	<div style="width:100%"><img src="data/pictures/header.png" width="970" height="150" alt="Alperlebnis+"/></div>
 
 	<div id="navigation" style="border: 1px solid black;">
 		<button type="button" id="navLink1" href="#" onclick="loadXMLPage('pages/home.xml');">Home</button>
-		<button id="navLink2" href="#" onclick="loadXMLPage('pages/rooms.xml');">Zimmerangebote</button>
-		<button id="navLink1" href="#" onclick="loadXMLPage('pages/activitymanagement.xml');">Angebotsverwaltung</button>
+		<button id="navLink2" href="#" onclick="doXSLT('data/roomdb.xml', 'pages/roomdb.xsl', 'content')">Zimmerangebote</button>
+		<button id="navLink1" href="#" onclick="doXSLT('data/activitydb.xml', 'pages/activitydb.xsl', 'content')">Angebotsverwaltung</button>
 		<button id="navLink2" href="#" onclick="loadXMLPage('pages/admin.xml');">Adminbereich</button>
 	</div>
 	
@@ -20,25 +20,6 @@
 	
 	<footer>
 	</footer>
-
-<script type="text/javascript">
-function loadXMLPage(url) {
-	
-	
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-	var content = document.getElementById('content');
-	content.innerHTML = "";
-    if (this.readyState == 4 && this.status == 200) {
-      content.innerHTML = this.responseText;
-      content.innerHTML = '<br>Some new content!';
-      content.innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
-}
-</script>
 
 </body>
 </html>
