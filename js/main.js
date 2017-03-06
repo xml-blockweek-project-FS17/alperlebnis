@@ -1,9 +1,20 @@
-function showWelcome()
+function loadXMLDoc(filename)
 {
-	doXSLT('pages/home.xml','pages/home.xsl', 'content');
+    if (window.ActiveXObject)
+    {
+        xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+    }
+    else
+    {
+        xhttp = new XMLHttpRequest();
+    }
+    xhttp.open("GET", filename, false);
+    try {xhttp.responseType = "msxml-document"} catch(err) {} // Helping IE11
+    xhttp.send("");
+    return xhttp.responseXML;
 }
 
-function loadXMLDoc(filename)
+function saveXMLDoc(xmlFile)
 {
     if (window.ActiveXObject)
     {
