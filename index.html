@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+	<h1>Alpeerlebnis +</h1>
+
+
+	<div id="navigation" style="border: 1px solid black;">
+		<button type="button" id="navLink1" href="#" onclick="loadXMLPage('pages/home.xml');">Home</button>
+		<button id="navLink2" href="#" onclick="loadXMLPage('pages/rooms.xml');">Zimmerangebote</button>
+		<button id="navLink1" href="#" onclick="loadXMLPage('pages/activitymanagement.xml');">Angebotsverwaltung</button>
+		<button id="navLink2" href="#" onclick="loadXMLPage('pages/admin.xml');">Adminbereich</button>
+	</div>
+	
+	<div id="content">
+	</div>
+	
+	<footer>
+	</footer>
+
+<script type="text/javascript">
+function loadXMLPage(url) {
+	
+	
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+	var content = document.getElementById('content');
+	content.innerHTML = "";
+    if (this.readyState == 4 && this.status == 200) {
+      content.innerHTML = this.responseText;
+      content.innerHTML = '<br>Some new content!';
+      content.innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
