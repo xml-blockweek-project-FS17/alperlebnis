@@ -8,7 +8,9 @@
                 xmlns="http://www.w3.org/1999/xhtml"
                 >
  
+ 
   <xsl:import href="navigation.xsl"/>
+  
  
   <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
               doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" indent="yes"/>
@@ -24,7 +26,9 @@
         <xsl:call-template name="header">
           <xsl:with-param name="pageName">Angebotsverwaltung</xsl:with-param>
         </xsl:call-template>
- 
+        
+        <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
+        
  
         <h1>Create a new event</h1>
         <hr/>
@@ -105,4 +109,6 @@
       </body>
     </html>
   </xsl:template>
+  <!-- include basically copies the text of the other xsl-file at the position. This is why it has to be at this place (after the match for root)-->
+   <xsl:include href="activity.xsl"/>
 </xsl:stylesheet>

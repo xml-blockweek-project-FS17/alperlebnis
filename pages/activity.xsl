@@ -4,9 +4,7 @@
     <xsl:output doctype-system="http://www.w3.org/TR/html4/strict.dtd"/>
     <xsl:output doctype-public="-//W3C//DTD HTML 4.01//EN"/>
 
-    <xsl:template match="/">
-        <xsl:apply-templates/>
-    </xsl:template>
+    
 
     <xsl:template match="activity">
         <xsl:variable name="column" select="(count(preceding-sibling::*[name() = name(current())])+1) mod 5"/>
