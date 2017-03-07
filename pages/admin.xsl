@@ -16,12 +16,12 @@
 	<xsl:template match="/">
 		<html lang="de">
             <xsl:call-template name="meta">
-                <xsl:with-param name="pageName">Home</xsl:with-param>
+                <xsl:with-param name="pageName">Adminbereich</xsl:with-param>
             </xsl:call-template>
      
             <body>
                 <xsl:call-template name="header">
-                    <xsl:with-param name="pageName">Home</xsl:with-param>
+                    <xsl:with-param name="pageName">Adminbereich</xsl:with-param>
                 </xsl:call-template>
                 <div>
 					<h1>Wilkommen bei Alperlebnis + </h1>
