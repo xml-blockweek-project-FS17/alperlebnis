@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+    <!--Navigation contains no matches, use call-template if you want to use it--> 
+    <xsl:import href="navigation.xsl"/>
+      
     <xsl:output method="html" version="4.01" indent="yes"/>
     <xsl:output doctype-system="http://www.w3.org/TR/html4/strict.dtd"/>
     <xsl:output doctype-public="-//W3C//DTD HTML 4.01//EN"/>
 
     <xsl:template match="/">
-        <xsl:apply-templates/>
+        <html lang="de">
+            <xsl:call-template name="meta">
+                <xsl:with-param name="pageName">Hostelzimmer</xsl:with-param>
+            </xsl:call-template>
+     
+            <body>
+                <xsl:call-template name="header">
+                    <xsl:with-param name="pageName">Hostelzimmer</xsl:with-param>
+                </xsl:call-template>
+                <xsl:apply-templates select="document('../data/roomdb.xml')/hostelrooms"/>
+                 <xsl:call-template name="footer"/>
+            </body>
+        </html>
+        
     </xsl:template>
 
     <xsl:template match="room">

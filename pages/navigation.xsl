@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
  
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -8,7 +9,7 @@
   <xsl:template name="meta">
     <xsl:param name="pageName" />
     <head>
-      <link rel="stylesheet" type="text/css" href="../style.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/style.css"/>
       <title>
         <xsl:value-of select="$pageName"/>
       </title>
@@ -32,7 +33,7 @@
             <button onclick="location.href='rooms.xml'" type="button">
               Zimmerangebote
             </button>
-            <button onclick="location.href='activitymanagement.xml.xml'" type="button">
+            <button onclick="location.href='activitymanagement.xml'" type="button">
               Angebotsverwaltung
             </button>
              <button onclick="location.href='admin.xml'" type="button">
@@ -51,7 +52,7 @@
     <div class="footer">
         <br/>
  
-      2017 <a href="main.php">Alperlebnis+&#169; </a> XML-Blockwoche
+      2017 Alperlebnis+&#169; XML-Blockwoche
       <br/> Ersteller: Philipp Disler, Marc Nussbaumer, Fabrizio Rohrbach, Jonas Studer 
       <br/>
     </div>
@@ -59,21 +60,3 @@
  
   
 </xsl:stylesheet>
-
-
-<!--<?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:template match="/">
-      <div>Yolo</div>
-
-         <div style="width:100%"><img src="../data/pictures/header.png" width="970" height="150" alt="Alperlebnis+"/></div>
-          <div id="navigation">
-            <xsl:for-each select="navigation/element">
-              <button onclick="location.href='{url}'" type="button">
-                <xsl:value-of select="name"/>
-              </button>
-        		</xsl:for-each>
-        	</div>
-       
-  </xsl:template>
-</xsl:stylesheet>-->

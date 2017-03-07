@@ -3,9 +3,10 @@ body {
     font-family: "Open Sans";
     font-size: 12px;
     width: auto;
-	text-align: center;
-	margin-left: 18%;
-	margin-right: 18%;
+	width: 970px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
