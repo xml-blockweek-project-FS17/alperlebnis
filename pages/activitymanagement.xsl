@@ -2,20 +2,12 @@
 
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:d="http://snolicio.us"
                 xmlns:svg="http://www.w3.org/2000/svg"
-                        xmlns:php="http://php.net/xsl"
-                xmlns="http://www.w3.org/1999/xhtml"
-                >
- 
- 
+                xmlns:php="http://php.net/xsl"
+                xmlns="http://www.w3.org/1999/xhtml">
   <xsl:import href="navigation.xsl"/>
-  
- 
   <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
               doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" indent="yes"/>
- 
- 
   <xsl:template match="/">
     <html lang="de">
       <xsl:call-template name="meta">
@@ -26,10 +18,8 @@
         <xsl:call-template name="header">
           <xsl:with-param name="pageName">Angebotsverwaltung</xsl:with-param>
         </xsl:call-template>
-        
+        <!-- imports the elements from another xml to be searched-->
         <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
-        
- 
         <h1>Create a new event</h1>
         <hr/>
         <form class="newEventForm" action="newEvent.php" method="post">
@@ -105,7 +95,6 @@
           </table>
         </form>
         <xsl:call-template name="footer"/>
- 
       </body>
     </html>
   </xsl:template>
