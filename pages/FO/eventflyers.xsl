@@ -38,10 +38,11 @@
 																								</fo:block>
 																				</fo:table-cell>
 																				<fo:table-cell number-rows-spanned="5">
-																								<fo:block>
-																								<!-- poster und @href muss im XML anstelle des image-Tag noch ergänzt werden -->
-																												<fo:external-graphic src="{poster/@href}" border-width="0cm" width="2.5cm"/>
-																								</fo:block>
+																								<!--
+                                                                                                                                                                                                <fo:block>
+																								
+																												<fo:external-graphic src="{image}" border-width="0cm" width="2.5cm"/>
+																								</fo:block>-->
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
