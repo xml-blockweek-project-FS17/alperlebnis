@@ -6,12 +6,10 @@
                 xmlns="http://www.w3.org/1999/xhtml"
                 >
  
-  <xsl:import href="navigation.xsl"/>
+  <xsl:import href="login.xsl"/>
  
   <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
               doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" indent="yes"/>
-     
-     
 
 	<xsl:template match="/">
 		<html lang="de">

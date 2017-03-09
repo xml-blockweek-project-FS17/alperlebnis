@@ -10,6 +10,7 @@
     <xsl:param name="pageName" />
     <head>
       <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+      <script src="../js/simpleLogin.js" type="text/javascript"></script>
       <title>
         <xsl:value-of select="$pageName"/>
       </title>
@@ -36,7 +37,7 @@
             <button onclick="location.href='activitymanagement.xml'" type="button">
               Angebotsverwaltung
             </button>
-             <button onclick="location.href='admin.xml'" type="button">
+             <button onclick="checkLogin()" type="button">
               Adminbereich
             </button>
       			
