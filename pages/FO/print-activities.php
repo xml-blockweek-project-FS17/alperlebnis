@@ -4,7 +4,7 @@
 require_once 'fop_service_client.php';
 
 // locate the source FO file.
-$foFile = 'pricelist.fo';
+$foFile = 'eventflyers.fo';
 
 // create an instance of the FOP client and perform service request.
 $serviceClient = new FOPServiceClient();

@@ -28,6 +28,9 @@
 					Passwort: <input type="text" id="password"></input>
 					<br></br><br></br>
 					<button type="button" id="navLink1" href="#" onclick="login();">Log in</button>
+                                        <form action="FO/print-activities.php" method="get">
+                                            <input type="submit" value="Generate Activities"/>
+                                        </form>
 				</div>
 	            <xsl:call-template name="footer"/>
             </body>

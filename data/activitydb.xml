@@ -1,4 +1,6 @@
-<activities xsi:noNamespaceSchemaLocation="activitydb_schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../pages/FO/eventflyers.xsl"?>
+<activities xsi:noNamespaceSchemaLocation="activitydb_schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
     <user name="bauer">
         <activity ID="1">
             <title>Stallbesichtigung</title>
