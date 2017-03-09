@@ -9,6 +9,34 @@ body {
     margin-right: auto;
 }
 
+input{
+    border-radius: 5px;
+    border-bottom-color: #b3b3b3;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #b3b3b3;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #b3b3b3;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #b3b3b3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    padding: 5px;
+}
+textarea{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+
 h1 {
     color: navy;
     font-size:40px;
@@ -48,6 +76,51 @@ button:hover {
     resize: none;
     display: flex;
     justify-content: space-around;
+}
+
+.newEventTable{
+    border-radius: 5px;
+    border-bottom-color: #b3b3b3;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #b3b3b3;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #b3b3b3;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #b3b3b3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    /* padding: 5px; */
+    text-align: left;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+input[type=submit]{
+    text-align: right;
+    float: right;
+    background: #eb3232;
+    background-image: -webkit-linear-gradient(top, #eb3232, #b81a1a);
+    background-image: -moz-linear-gradient(top, #eb3232, #b81a1a);
+    background-image: -ms-linear-gradient(top, #eb3232, #b81a1a);
+    background-image: -o-linear-gradient(top, #eb3232, #b81a1a);
+    background-image: linear-gradient(to bottom, #eb3232, #b81a1a);
+    -webkit-border-radius: 14;
+    -moz-border-radius: 14;
+    border-radius: 5px;
+    font-family: Arial;
+    color: #ffffff;
+    /* font-size: 20px; */
+    padding: 5px 10px 5px 10px;
+    border: solid #1f628d 0px;
+    text-decoration: none;
 }
 
 .roomitem
