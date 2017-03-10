@@ -33,55 +33,78 @@
 												<fo:table-body>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
-																								<fo:block font-size="16pt" color="red" font-weight="900" text-align="left">
+																								<fo:block font-size="14pt" color="red" font-weight="900" text-align="left">
 																												<xsl:value-of select="title"/>
 																								</fo:block>
 																				</fo:table-cell>
-																				<fo:table-cell number-rows-spanned="5">
-																								<!--
-                                                                                                                                                                                                <fo:block>
-																								
-																												<fo:external-graphic src="{image}" border-width="0cm" width="2.5cm"/>
-																								</fo:block>-->
+																				<fo:table-cell number-rows-spanned="10">
+																								<fo:block>
+																												<!--<fo:external-graphic src="xml-f17.enterpriselab.ch/~tbdisler/data/pictures/Stall_Bes.jpg" border-width="0cm" width="2.5cm" height="2.5cm"/>-->
+																												<fo:external-graphic src="{image}" content-height="scale-to-fit" height="2.5in"  content-width="2.5in" scaling="non-uniform"/>
+																												
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+                                                                <fo:table-row>
+                                                                                <fo:table-cell  padding-top="2pt" number-columns-spanned="1">
+																								<fo:block>
+																												<xsl:value-of select="description"/>
+																								</fo:block>
+																				</fo:table-cell>
+                                                                </fo:table-row>
+                                                                <fo:table-row>
+																				<fo:table-cell padding-top="4pt" number-columns-spanned="2" padding-bottom="4pt">
+																								<fo:block>
+																												Veranstalter: <xsl:value-of select="provider"/>
+																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
-																				<fo:table-cell padding-top="8pt" number-columns-spanned="2" padding-bottom="10pt">
+																				<fo:table-cell number-columns-spanned="2" padding-bottom="4pt">
 																								<fo:block>
 																												Veranstaltungsdatum: <xsl:value-of select="activitydate"/>
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
-																<fo:table-row>
-																				<fo:table-cell>
+                                                                <fo:table-row>
+																				<fo:table-cell padding-top="3pt" number-columns-spanned="2" padding-bottom="1pt">
 																								<fo:block>
-																												Veranstalter: <xsl:value-of select="provider"/>
+																												Anmeldungszeitraum 
 																								</fo:block>
 																				</fo:table-cell>
-																				<fo:table-cell>
+																</fo:table-row>
+                                                                <fo:table-row>
+																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Year: <xsl:value-of select="description"/>
+																												<xsl:value-of select="signupstart"/> bis <xsl:value-of select="signupend"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
-																				<fo:table-cell>
+																				<fo:table-cell padding-top="6pt" number-columns-spanned="2" padding-bottom="1pt">
 																								<fo:block>
-																												Kontakt: Tel <xsl:value-of select="contact/phone"/> E-Mail <xsl:value-of select="contact/email"/>
+																												Anmeldung per:
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
-																<fo:table-row>
-																				<fo:table-cell>
+                                                                <fo:table-row>
+																				<fo:table-cell number-columns-spanned="2">
+																								<fo:block>
+																												Telefon: <xsl:value-of select="contact/phone"/>
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+                                                               <fo:table-row>
+																				<fo:table-cell number-columns-spanned="2">
+																								<fo:block>
+																												E-Mail: <xsl:value-of select="contact/email"/>
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+                                                                <fo:table-row>
+																				<fo:table-cell padding-top="7pt" number-columns-spanned="2" padding-bottom="4pt">
 																								<fo:block>
 																												Preis: <xsl:value-of select="price"/> Fr.
-																								</fo:block>
-																				</fo:table-cell>
-																</fo:table-row>
-																																<fo:table-row>
-																				<fo:table-cell>
-																								<fo:block>
-																												Anmeldungszeitrum vom <xsl:value-of select="signupstart"/> bis <xsl:value-of select="signupend"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>

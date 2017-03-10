@@ -8,6 +8,7 @@
 
 // load XML
 $data = file_get_contents('../../data/activitydb.xml');
+
 $xml = new DOMDocument();
 $xml->loadXML($data);
 
@@ -19,6 +20,5 @@ $xsl->load('eventflyers.xsl');
 $processor = new XSLTProcessor();
 $processor->importStylesheet($xsl);
 $dom = $processor->transformToDoc($xml);
-
 // send result to client
 $dom->save('eventflyers.fo');
