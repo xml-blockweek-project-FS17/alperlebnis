@@ -42,6 +42,12 @@ h1 {
     font-size:40px;
 }
 
+.activity{
+    -webkit-border-radius: 5 5 0 0;
+    -moz-border-radius: 5 5 0 0;
+    border-radius: 5px 5px 0px 0px;
+}
+
 /*button-style generated with http://css3buttongenerator.com/*/
 button {
     background: #eb3232;
@@ -76,6 +82,33 @@ button:hover {
     resize: none;
     display: flex;
     justify-content: space-around;
+}
+
+.activityImage{
+     border-radius: 5px 5px 0px 0px;
+     -webkit-border-radius: 5 5 0 0;
+    -moz-border-radius: 5 5 0 0;
+    background-size:cover;
+    height:200px;
+    position:relative;
+}
+
+
+
+.itemTable{
+    text-align: left;
+    padding:0px 10px 10px 10px;
+}
+
+.deleteButton{
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}
+.editButton{
+    position:absolute;
+    bottom:0px;
+    right:120px;
 }
 
 .newEventTable{
@@ -132,9 +165,9 @@ input[type=submit]{
 
 .activityitem
 {
-    width: 400px;
-    max-height: 400px;
-    height: 400px;
+    width: 320px;
+    max-height: 600px;
+    height: 500px;
 }
 
 .itemvaluename
@@ -160,6 +193,9 @@ input[type=submit]{
     border: 1px solid #c5c5c5;
     margin-right: 15px;
     margin-top: 15px;
-    padding: 10px;
     float: left;
+     border-radius: 5px;
+     -webkit-border-radius: 5;
+    -moz-border-radius: 5;
 }
+

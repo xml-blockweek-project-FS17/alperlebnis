@@ -21,15 +21,27 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
 
     <xsl:template name="activities">
-        <table>
-            <tr>
-                <td colspan="2"><center><b><xsl:value-of select="title"/></b></center></td>
-            </tr>
-            <tr>
-                <td colspan="2"><center><img src="{image}" width="300" height="180"/></center></td>
-            </tr>
+        <div class="activityItem">
+            <div class="activityImage" style="background-image:url({image})">
+                <div class="editButton">
+                    <button>
+                        edit
+                    </button>
+                </div>
+                <div class="deleteButton">
+                    <button>
+                        delete
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <center><h2><xsl:value-of select="title"/></h2></center>
+        
+        <table class="itemTable">
             <tr>
                 <td class="itemvaluename"><b>Anbieter</b></td><td><xsl:value-of select="provider"/></td>
             </tr>
