@@ -20,73 +20,74 @@
         </xsl:call-template>
         <!-- imports the elements from another xml to be searched-->
         <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
-        <h1>Create a new event</h1>
-        <hr/>
-        <form class="newEventForm" action="newEvent.php" method="post">
+        
+        <form class="newActivityForm" action="../php/newActivity.php" method="post">
+          <h2>Neue Aktivität erstellen</h2>
+          <hr/>
           <table class="newEventTable">
             <tr>
-              <td class="eventLeftColumn">Title</td>
+              <td class="eventLeftColumn">Titel</td>
               <td>
-                <input type="text" name="title"  autofocus="autofocus" size="30" required="required" />
+                <input type="text" name="title" size="30" required="required" />
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Creator</td>
+              <td class="eventLeftColumn">Anbieter</td>
               <td>
                 <input type="text" name="creator" size="30"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Contact</td>
+              <td class="eventLeftColumn">Preis</td>
               <td>
-                <input type="text" name="contact" placeholder="E-Mail or Tel. Nr" size="30"/>
+                <input type="number" name="price" size="30"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Description</td>
+              <td class="eventLeftColumn">Durchführungsdatum</td>
               <td>
-                <textarea name="description" cols="24"/>
+                <input type="text" name="date" placeholder="DD.MM.YYYY" size="9" required="required"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Location</td>
+              <td class="eventLeftColumn">Anmeldestart</td>
               <td>
-                <input type="text" name="location" size="30" required="required"/>
+                <input type="text" name="startregister" placeholder="DD.MM.YYYY" size="9" required="required"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Max. persons</td>
+              <td class="eventLeftColumn">Anmeldeschluss</td>
               <td>
-                <input type="text" name="maxReservations" size="5"/>
+                <input type="text" name="endregister" placeholder="DD.MM.YYYY" size="9" required="required"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Price per Person </td>
+              <td class="eventLeftColumn">Telefon</td>
               <td>
-                <input type="text" name="price" size="5"/>
+                <input type="text" name="telephone" placeholder="Telefon-Nummer" size="30"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Date</td>
+              <td class="eventLeftColumn">Email</td>
               <td>
-                <input type="text" name="date" placeholder="dd.MM.yyyy" size="9" required="required"/>
+                <input type="text" name="email" placeholder="Email-Adresse" size="30"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Time</td>
+              <td class="eventLeftColumn">Beschreibung</td>
               <td>
-                <input type="time" name="time" placeholder="hh:mm" size="9" required="required"/>
+                <textarea name="description" cols="24" required="required"/>
               </td>
             </tr>
             <tr>
-              <td class="eventLeftColumn">Event-picture</td>
+              <td class="eventLeftColumn">Aktivitätsbild</td>
               <td>
-                <input type="url" name="image" placeholder="http://www.yourEvent/image.jpg" size="30"/>
+                <input type="url" name="image" placeholder="http://www.yourEvent/image.jpg" size="30" required="required"/>
               </td>
             </tr>
             <tr>
               <td  colspan="2">
-                <input type="submit" value="Create"/>
+                <input type="submit" value="Erstellen"/>
               </td>
             </tr>
             <tr>

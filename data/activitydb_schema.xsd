@@ -4,6 +4,7 @@
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
                 <xs:element ref="user"/>
             </xs:sequence>
+            <xs:attribute name="nextActivityId" type="xs:positiveInteger"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="user">
