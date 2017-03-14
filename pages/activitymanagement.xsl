@@ -98,21 +98,37 @@
             <tr>
               <td class="eventLeftColumn">Beschreibung</td>
               <td>
-                <textarea name="description" class="activityInput" cols="24" required="required"><xsl:value-of select="normalize-space($param_desc)"/></textarea>
+                <textarea name="description" class="activityInput descArea" cols="24" required="required"><xsl:value-of select="normalize-space($param_desc)"/></textarea>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Aktivitätsbild</td>
               <td>
-                <input type="url" name="image" class="activityInput" placeholder="http://www.yourEvent/image.jpg" value="{$param_image}" size="30" required="required"/>
+                <input type="url" name="image" class="activityInput" placeholder="http://www.deineAktivitaet/image.jpg" value="{$param_image}" size="30" required="required"/>
               </td>
             </tr>
             <tr>
-              <td  colspan="2">
-                
-                <input type="submit" value="{$submit_button}"/>
-                <input type="hidden" name="id" value="{$param_id}"></input>
-              </td>
+              <xsl:choose>
+                <xsl:when test = "string($param_id) != ''"  >
+                  <td colspan="2">
+                   
+                    <button class="cancelButton" onclick="location.href='../pages/activitymanagement.xml'" type="button">
+                    Abbrechen
+                  </button>
+                   <input type="submit" value="{$submit_button}"/>
+                    <input type="hidden" name="id" value="{$param_id}"></input>
+                  </td>
+                  
+                  
+                </xsl:when>
+                <xsl:otherwise>
+                  <td  colspan="2">
+                    <input type="submit" value="{$submit_button}"/>
+                    <input type="hidden" name="id" value="{$param_id}"></input>
+                  </td>
+                </xsl:otherwise>
+              </xsl:choose>
+              
             </tr>
             <tr>
               <br/>
