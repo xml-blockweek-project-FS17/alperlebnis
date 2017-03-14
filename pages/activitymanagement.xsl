@@ -22,6 +22,7 @@
   <xsl:param name="param_start" select="''"/>
   <xsl:param name="param_end" select="''"/>
   <xsl:param name="param_id" select="''"/>
+  <xsl:param name="param_headline" select="'Neues Angebot erstellen'"/>
   <xsl:param name="form_action" select="'../php/newActivity.php'"/>
   
   <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -45,7 +46,7 @@
         </div>
         <form class="newActivityForm" action="{$form_action}" method="post">
           <table class="newEventTable">
-            <tr><td colspan="2"><h2>Neues Angebot erstellen</h2></td></tr>
+            <tr><td colspan="2"><h2><xsl:value-of select="$param_headline"/></h2></td></tr>
             <tr>
               <td class="eventLeftColumn">Titel</td>
               <td>
@@ -97,7 +98,7 @@
             <tr>
               <td class="eventLeftColumn">Beschreibung</td>
               <td>
-                <textarea name="description" class="activityInput" cols="24" required="required"><xsl:value-of select="$param_desc"/></textarea>
+                <textarea name="description" class="activityInput" cols="24" required="required"><xsl:value-of select="normalize-space($param_desc)"/></textarea>
               </td>
             </tr>
             <tr>

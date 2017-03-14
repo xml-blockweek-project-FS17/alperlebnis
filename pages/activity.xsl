@@ -47,7 +47,11 @@
                 <td class="itemvaluename"><b>Preis</b></td><td><xsl:value-of select="price/@currency"/>: <xsl:apply-templates select="price"/></td>
             </tr>
             <tr>
-                <td class="itemvaluename"><b>Durchführungsdatum</b></td><td><xsl:apply-templates select="activitydate"/></td>
+                <td class="itemvaluename"><b>Durchführungsdatum</b>
+                </td>
+                <td>
+                    <xsl:apply-templates select="activitydate"/>
+                </td>
             </tr>
             <tr>
                 <td class="itemvaluename"><b>Anmeldestart</b></td><td><xsl:apply-templates select="signupstart"/></td>

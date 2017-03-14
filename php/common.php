@@ -104,14 +104,15 @@ function loadActivityData($xml_file, $xsd_file, $xsl_file, $id, $message) {
     $proc->setParameter('', 'submit_button', 'Änderungen speichern');
     $proc->setParameter('', 'param_title',$title); 
     $proc->setParameter('', 'param_provider',$provider); 
-    $proc->setParameter('', 'param_activitydate',$date); 
+    $proc->setParameter('', 'param_activitydate',convertToEuropeanDate($date)); 
     $proc->setParameter('', 'param_desc',$desc); 
     $proc->setParameter('', 'param_image',$img); 
     $proc->setParameter('', 'param_phone',$phone); 
     $proc->setParameter('', 'param_email',$email); 
     $proc->setParameter('', 'param_price',$price); 
-    $proc->setParameter('', 'param_start',$start); 
-    $proc->setParameter('', 'param_end',$end); 
+    $proc->setParameter('', 'param_start',convertToEuropeanDate($start)); 
+    $proc->setParameter('', 'param_end',convertToEuropeanDate($end)); 
+    $proc->setParameter('', 'param_headline','Angebot editieren'); 
     $proc->setParameter('', 'form_action','../php/editActivity.php'); 
     $proc->registerPHPFunctions();
  
@@ -245,14 +246,14 @@ function editActivity($id, $title, $creator, $price, $date, $start, $end, $tel, 
     // change values
         $toEdit->getElementsByTagName("title")->item(0)->nodeValue = $title;
         $toEdit->getElementsByTagName("provider")->item(0)->nodeValue = $creator;
-        $toEdit->getElementsByTagName("activitydate")->item(0)->nodeValue = $date;
+        $toEdit->getElementsByTagName("activitydate")->item(0)->nodeValue = convertToXMLDate($date);
         $toEdit->getElementsByTagName("description")->item(0)->nodeValue = $desc;
         $toEdit->getElementsByTagName("image")->item(0)->nodeValue = $img;
         $toEdit->getElementsByTagName("phone")->item(0)->nodeValue = $tel;
         $toEdit->getElementsByTagName("email")->item(0)->nodeValue = $email;
         $toEdit->getElementsByTagName("price")->item(0)->nodeValue = $price;
-        $toEdit->getElementsByTagName("signupstart")->item(0)->nodeValue = $start;
-        $toEdit->getElementsByTagName("signupend")->item(0)->nodeValue = $end;
+        $toEdit->getElementsByTagName("signupstart")->item(0)->nodeValue = convertToXMLDate($start);
+        $toEdit->getElementsByTagName("signupend")->item(0)->nodeValue = convertToXMLDate($end);
          
         if (!$dom->schemaValidate("../data/activitydb_schema.xsd"))
         {
