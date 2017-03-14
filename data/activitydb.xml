@@ -34,5 +34,5 @@
             <signupstart>2017-09-10</signupstart>
             <signupend>2017-09-10</signupend>
         </activity>
-        <activity ID="3"><title>Wildwasser im Bergfluss</title><provider>Raftingverband HSLU</provider><activitydate>2017-03-14</activitydate><description>Jetzt das Rafting geniessen</description><image>http://www.3glav.com/wp-content/uploads/2016/01/soca-rafting-slovenia-bovec.jpg</image><contact><phone>079 614 91 19</phone><email>marc.nussbaumer@stud.hslu.ch</email></contact><price currency="CHF">500</price><signupstart>2017-03-13</signupstart><signupend>2017-03-14</signupend></activity><activity ID="4"><title>Wildwasser im Bergfluss</title><provider>Raftingverband HSLU</provider><activitydate>2017-03-14</activitydate><description>Jetzt das Rafting geniessen</description><image>http://www.3glav.com/wp-content/uploads/2016/01/soca-rafting-slovenia-bovec.jpg</image><contact><phone>079 614 91 19</phone><email>marc.nussbaumer@stud.hslu.ch</email></contact><price currency="CHF">500</price><signupstart>2017-03-13</signupstart><signupend>2017-03-14</signupend></activity></user>
+    </user>    
 </activities>

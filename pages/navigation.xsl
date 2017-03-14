@@ -28,13 +28,13 @@
         <div id="wrap">
       		<div style="width:100%"><img src="../data/pictures/header.png" width="970" height="150" alt="Alperlebnis+"/></div>
       		<div id="navigation">
-      		  <button onclick="location.href='home.xml'" type="button">
+      		  <button onclick="location.href='../pages/home.xml'" type="button">
               Home
             </button>
-            <button onclick="location.href='rooms.xml'" type="button">
+            <button onclick="location.href='../pages/rooms.xml'" type="button">
               Zimmerangebote
             </button>
-            <button onclick="location.href='activitymanagement.xml'" type="button">
+            <button onclick="location.href='../pages/activitymanagement.xml'" type="button">
               Angebotsverwaltung
             </button>
              <button onclick="checkLogin()" type="button">

@@ -198,4 +198,8 @@ input[type=submit]{
      -webkit-border-radius: 5;
     -moz-border-radius: 5;
 }
+.message{
+    color: green;
+    font-size: 40px;
+}
 

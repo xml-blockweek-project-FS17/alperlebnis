@@ -12,6 +12,45 @@ function validateDataXml($database, $schema) {
         die();
     }
 }
+
+function transformXml($xml_file, $xsd_file, $xsl_file, $message) {
+ 
+    // validate data.xml on each page request
+    validateDataXml($xml_file, $xsd_file);
+ 
+    // Load xml
+    $xml = new DOMDocument;
+   // $xml->validateOnParse = true;
+    $xml->load($xml_file);
+ 
+    // Load XSL file
+    $xsl = new DOMDocument;
+    $xsl->validateOnParse = true;
+    $xsl->load($xsl_file);
+ 
+    // Configure the transformer
+    $proc = new XSLTProcessor;
+    $proc->importStyleSheet($xsl);
+    
+    /*The XSL needs a parameter with name message so this can work
+    Easiest way to use is after the navigation import with the following line:
+    define the param->  <xsl:param name="message" select="''"/>
+    use the param-> <div class="message">
+          <xsl:if test="string($message)">
+            <xsl:value-of select="$message"/>
+          </xsl:if>
+        </div>
+    */
+    $proc->setParameter('', 'message', $message);  
+    $proc->registerPHPFunctions();
+ 
+    // Attach the xsl rules
+    
+    echo $proc->transformToXML($xml);
+    
+    
+    
+}
     
 function deleteActivity($id){
  
@@ -97,13 +136,6 @@ function writeNewActivity($title, $creator, $contact, $price, $date, $start, $en
     $xml_start = $dom->createElement('signupend',convertToXMLDate($end));
     $newEvent->appendChild($xml_start);
     
-        
-        
-    
-   
-
-
-    
     $insertroot = $root->getElementsByTagName("user")->item(0);
     $insertroot->appendChild($newEvent); 
 
@@ -111,6 +143,7 @@ function writeNewActivity($title, $creator, $contact, $price, $date, $start, $en
     {
         $dom->save('../data/activitydb.xml');
         //success();
+        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Ihre Aktivität wurde erfolgreich erstellt!" );
     }
     
     

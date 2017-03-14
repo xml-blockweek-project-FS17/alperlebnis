@@ -5,9 +5,15 @@
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:php="http://php.net/xsl"
                 xmlns="http://www.w3.org/1999/xhtml">
+  
   <xsl:import href="navigation.xsl"/>
+  
+  <!--Message should only be set over XSLTProcess->setParameter() but needs a placeholder to work properly-->
+  <xsl:param name="message" select="''"/>
+  
   <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
               doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" indent="yes"/>
+  
   <xsl:template match="/">
     <html lang="de">
       <xsl:call-template name="meta">
@@ -18,11 +24,20 @@
         <xsl:call-template name="header">
           <xsl:with-param name="pageName">Angebotsverwaltung</xsl:with-param>
         </xsl:call-template>
+        
+        <div class="message">
+          <xsl:if test="string($message)">
+            <xsl:value-of select="$message"/>
+          </xsl:if>
+        </div>
         <!-- imports the elements from another xml to be searched-->
         <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
         
         <form class="newActivityForm" action="../php/newActivity.php" method="post">
           <h2>Neue Aktivität erstellen</h2>
+          
+          
+          
           <hr/>
           <table class="newEventTable">
             <tr>
