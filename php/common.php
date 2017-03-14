@@ -143,7 +143,7 @@ function deleteActivity($id){
     {
         $deleteroot->removeChild($toRemove);
         $dom->save("../data/activitydb.xml");
-        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Aktivität wurde erfolgreich gelöscht!" );
+        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Angebot wurde erfolgreich gelöscht!" );
     }
 }
     
@@ -217,7 +217,7 @@ function writeNewActivity($title, $creator, $contact, $price, $date, $start, $en
     if ($dom->schemaValidate('../data/activitydb_schema.xsd'))
     {
         $dom->save('../data/activitydb.xml');
-        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Ihre Aktivität wurde erfolgreich erstellt!" );
+        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Ihr Angebot wurde erfolgreich erstellt!" );
     }
     
     
@@ -262,7 +262,7 @@ function editActivity($id, $title, $creator, $price, $date, $start, $end, $tel, 
  
         // save
         $dom->save("../data/activitydb.xml");
-        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Aktivität erfolgreich editiert!" );  
+        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Ihr Angebot erfolgreich editiert!" );  
     }
 }
 

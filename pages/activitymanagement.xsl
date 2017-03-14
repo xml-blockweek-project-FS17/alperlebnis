@@ -43,80 +43,74 @@
             <xsl:value-of select="$message"/>
           </xsl:if>
         </div>
-        <!-- imports the elements from another xml to be searched-->
-        <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
-        
         <form class="newActivityForm" action="{$form_action}" method="post">
-          <h2>Neue Aktivität erstellen</h2>
-          <input type="hidden" name="id" value="{$param_id}"/>
-          
-          
-          <hr/>
           <table class="newEventTable">
+            <tr><td colspan="2"><h2>Neues Angebot erstellen</h2></td></tr>
             <tr>
               <td class="eventLeftColumn">Titel</td>
               <td>
-                <input type="text" name="title" size="30" required="required" value="{$param_title}" />
+                <input type="text" name="title" class="activityInput" size="30" required="required" value="{$param_title}" />
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Anbieter</td>
               <td>
-                <input type="text" name="creator" size="30" value="{$param_provider}"/>
+                <input type="text" name="creator" class="activityInput" size="30" value="{$param_provider}"/>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Preis</td>
               <td>
-                <input type="number" name="price" size="30" value="{$param_price}"/>
+                <input type="number" name="price" class="activityInput" size="30" value="{$param_price}"/>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Durchführungsdatum</td>
               <td>
-                <input type="text" name="date" placeholder="DD.MM.YYYY" size="9" value="{$param_activitydate}" required="required"/>
+                <input type="text" name="date" class="activityInput" placeholder="DD.MM.YYYY" size="9" value="{$param_activitydate}" required="required"/>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Anmeldestart</td>
               <td>
-                <input type="text" name="startregister" placeholder="DD.MM.YYYY" size="9" value="{$param_start}" required="required"/>
+                <input type="text" name="startregister" class="activityInput" placeholder="DD.MM.YYYY" size="9" value="{$param_start}" required="required"/>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Anmeldeschluss</td>
               <td>
-                <input type="text" name="endregister" placeholder="DD.MM.YYYY" size="9" value="{$param_end}" required="required"/>
+                <input type="text" name="endregister" class="activityInput" placeholder="DD.MM.YYYY" size="9" value="{$param_end}" required="required"/>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Telefon</td>
               <td>
-                <input type="text" name="telephone" placeholder="Telefon-Nummer" value="{$param_phone}" size="30"/>
+                <input type="text" name="telephone" class="activityInput" placeholder="Telefon-Nummer" value="{$param_phone}" size="30"/>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Email</td>
               <td>
-                <input type="text" name="email" placeholder="Email-Adresse" value="{$param_email}" size="30"/>
+                <input type="text" name="email" class="activityInput" placeholder="Email-Adresse" value="{$param_email}" size="30"/>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Beschreibung</td>
               <td>
-                <textarea name="description" cols="24" required="required"><xsl:value-of select="$param_desc"/></textarea>
+                <textarea name="description" class="activityInput" cols="24" required="required"><xsl:value-of select="$param_desc"/></textarea>
               </td>
             </tr>
             <tr>
               <td class="eventLeftColumn">Aktivitätsbild</td>
               <td>
-                <input type="url" name="image" placeholder="http://www.yourEvent/image.jpg" value="{$param_image}" size="30" required="required"/>
+                <input type="url" name="image" class="activityInput" placeholder="http://www.yourEvent/image.jpg" value="{$param_image}" size="30" required="required"/>
               </td>
             </tr>
             <tr>
               <td  colspan="2">
                 
                 <input type="submit" value="{$submit_button}"/>
+                <input type="hidden" name="id" value="{$param_id}"></input>
               </td>
             </tr>
             <tr>
@@ -124,6 +118,8 @@
             </tr>
           </table>
         </form>
+        <!-- imports the elements from another xml to be searched-->
+        <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
         <xsl:call-template name="footer"/>
       </body>
     </html>
