@@ -26,16 +26,14 @@
     <xsl:template name="activities">
         <div class="activityItem">
             <div class="activityImage" style="background-image:url({image})">
-                <div class="editButton">
-                    <button>
-                        edit
-                    </button>
-                </div>
-                <div class="deleteButton">
-                    <button>
-                        delete
-                    </button>
-                </div>
+                <form class="newActivityForm" action="../php/editActivity.php" method="post">
+                    <input type="hidden" name="id" value="{@ID}"></input>
+                    <button class="editButton" title="Editieren" type="submit" name="action"></button>
+                </form>
+                <form class="newActivityForm" action="../php/deleteActivity.php" method="post">
+                    <input type="hidden" name="id" value="{@ID}"></input>
+                    <button class="deleteButton" title="Löschen" type="submit" name="action"></button>
+                </form>
             </div>
         </div>
         

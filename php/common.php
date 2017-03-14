@@ -55,10 +55,10 @@ function transformXml($xml_file, $xsd_file, $xsl_file, $message) {
 function deleteActivity($id){
  
     // validate data.xml
-    validateDataXml();
+    validateDataXml("../data/activitydb.xml","../data/activitydb_schema.xsd");
     $dom=new DOMDocument();
     $dom->validateOnParse = true;
-    $dom->load("data.xml");
+    $dom->load("../data/activitydb.xml");
     $root=$dom->documentElement;
     $events = $dom->getElementsByTagName("activity");
     foreach ($events as $event) {
@@ -69,7 +69,8 @@ function deleteActivity($id){
     if (isset($toRemove))
     {
         $root->removeChild($toRemove);
-        $dom->save('data.xml');
+        $dom->save("../data/activitydb.xml");
+        transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Aktivität wurde erfolgreich gelöscht!" );
     }
 }
     
@@ -142,7 +143,6 @@ function writeNewActivity($title, $creator, $contact, $price, $date, $start, $en
     if ($dom->schemaValidate('../data/activitydb_schema.xsd'))
     {
         $dom->save('../data/activitydb.xml');
-        //success();
         transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Ihre Aktivität wurde erfolgreich erstellt!" );
     }
     

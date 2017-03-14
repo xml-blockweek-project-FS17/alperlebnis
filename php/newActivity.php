@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     writeNewActivity($title, $creator, $contact, $price, $date, $start, $end, $tel, $email, $desc, $img );
 }
 else {
-    transformXml('newEvent');
+    //Display page if no post-data is available
+    transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","" );
 }
 ?>

@@ -100,16 +100,7 @@ button:hover {
     padding:0px 10px 10px 10px;
 }
 
-.deleteButton{
-    position:absolute;
-    bottom:0px;
-    right:0px;
-}
-.editButton{
-    position:absolute;
-    bottom:0px;
-    right:120px;
-}
+
 
 .newEventTable{
     border-radius: 5px;
@@ -202,4 +193,46 @@ input[type=submit]{
     color: green;
     font-size: 40px;
 }
+
+.deleteButton{
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    background-image: url("../data/pictures/delete.png");
+    background-size: 20px 20px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
+.deleteButton:hover{
+    background-image: url("../data/pictures/delete.png");
+    background-size: 22px 22px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.editButton{
+    position:absolute;
+    bottom:0px;
+    right:40px;
+    background-image: url("../data/pictures/edit.png");
+    background-size: 20px 20px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
+.editButton:hover{
+    background-image: url("../data/pictures/edit.png");
+    background-size: 22px 22px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
