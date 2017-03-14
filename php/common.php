@@ -59,16 +59,18 @@ function deleteActivity($id){
     $dom=new DOMDocument();
     $dom->validateOnParse = true;
     $dom->load("../data/activitydb.xml");
+    
     $root=$dom->documentElement;
+    $deleteroot = $root->getElementsByTagName("user")->item(0);
     $events = $dom->getElementsByTagName("activity");
     foreach ($events as $event) {
-        if ($event->getAttribute("id") == $id)
+        if ($event->getAttribute("ID") == $id)
             $toRemove = $event;
     }
  
     if (isset($toRemove))
     {
-        $root->removeChild($toRemove);
+        $deleteroot->removeChild($toRemove);
         $dom->save("../data/activitydb.xml");
         transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Aktivität wurde erfolgreich gelöscht!" );
     }
