@@ -272,7 +272,7 @@ function convertToXMLDate($europeanDate){
 }
 
 function convertToEuropeanDate($xmlDate){
-    return $new_date = date('d.m.Y', strtotime($europeanDate));
+    return $new_date = date('d.m.Y', strtotime($xmlDate));
 }
 
 ?>
