@@ -26,7 +26,7 @@
     <xsl:template name="activities">
         <div class="activityItem">
             <div class="activityImage" style="background-image:url({image})">
-                <form class="newActivityForm" action="../php/editActivity.php" method="post">
+                <form class="newActivityForm" action="../php/loadActivityData.php" method="post">
                     <input type="hidden" name="id" value="{@ID}"></input>
                     <button class="editButton" title="Editieren" type="submit" name="action"></button>
                 </form>

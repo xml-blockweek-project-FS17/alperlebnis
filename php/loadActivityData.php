@@ -3,7 +3,8 @@ require 'common.php';
 //read form entries and invoke method from common.php to create new event
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
-    deleteActivity($id);
+    
+    loadActivityData("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl", $id, "");
 }
 else {
     //Display page if no post-data is available
