@@ -13,12 +13,15 @@
 												<fo:page-sequence master-reference="event_list">
 																<fo:static-content flow-name="xsl-region-before">
 																				<fo:block text-align="center" font-size="8pt">
-																								Alperlebnis+ Eventangebote  /  Seite
+																								Buchungsbestätigung  /  Seite
 																								<fo:page-number/>
 																				</fo:block>
 																</fo:static-content>
 																<fo:flow flow-name="xsl-region-body">
-																				<fo:block font-size="19pt" font-family="sans-serif" line-height="24pt" space-after.optimum="20pt" background-color="red" color="white" text-align="center" padding-top="5pt" padding-bottom="5pt">Alperlebnis+ Eventangebote</fo:block>
+																				<fo:block>
+																					<fo:external-graphic src="http://xml-f17.enterpriselab.ch/~tbdisler/data/pictures/header.png" content-height="scale-to-fit" height="1in" content-width="6.3in" scaling="non-uniform"/>
+																				</fo:block>
+																				<fo:block font-size="19pt" font-family="sans-serif" line-height="24pt" space-after.optimum="20pt" background-color="red" color="white" text-align="center" padding-top="5pt" padding-bottom="5pt">Buchungsbestätigung</fo:block>
 																				<xsl:apply-templates />
 																</fo:flow>
 												</fo:page-sequence>
@@ -39,7 +42,9 @@
 																				</fo:table-cell>
 																				<fo:table-cell number-rows-spanned="10">
 																								<fo:block>
+																												<!--<fo:external-graphic src="xml-f17.enterpriselab.ch/~tbdisler/data/pictures/Stall_Bes.jpg" border-width="0cm" width="2.5cm" height="2.5cm"/>-->
 																												<fo:external-graphic src="{image/@href}" content-height="scale-to-fit" height="2.5in"  content-width="2.5in" scaling="non-uniform"/>
+																											
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>

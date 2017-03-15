@@ -6,6 +6,7 @@
  * API: http://php.net/manual/en/class.xsltprocessor.php
  */
 
+
 // load XML
 $data = file_get_contents('../../data/activitydb.xml');
 
@@ -22,3 +23,5 @@ $processor->importStylesheet($xsl);
 $dom = $processor->transformToDoc($xml);
 // send result to client
 $dom->save('eventflyers.fo');
+
+include ('print-activities.php'); 
