@@ -28,7 +28,7 @@
                                 <td>Benutzername:</td><td><input type="text" id="username" ></input></td>
                             </tr>
                             <tr>
-                                <td>Passwort:</td><td><input type="text" id="password"></input></td>
+                                <td>Passwort:</td><td><input type="password" id="password"></input></td>
                             </tr>
                         </table>
                         <button type="button" id="navLink1" href="#" onclick="login();">Log in</button>

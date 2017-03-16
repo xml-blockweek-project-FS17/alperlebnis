@@ -7,10 +7,8 @@ var users = {
 function checkLogin(){
 	if(checkCookie()){
 		location.href='../pages/admin.xml'
-		//doXSLT('data/admin.xml','pages/admin.xsl','content');
 	} else {
 		location.href='../pages/login.xml'
-		//doXSLT('data/login.xml','pages/login.xsl','content');
 	}
 }
 
@@ -27,7 +25,6 @@ function login(){
 
 		alert('Welcome '+user);
 		location.href='../pages/admin.xml'
-		//doXSLT('data/admin.xml','pages/admin.xsl','content');
 	} else {
 		alert("Wrong credentials");
 	}

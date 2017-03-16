@@ -13,6 +13,11 @@
             </xsl:call-template>
             <body>
                 <xsl:call-template name="header" />
+                <script>
+                    if(!checkCookie()){
+                        location.href='../pages/login.xml'
+                    }
+                </script>
                 <div class="message">
                     <xsl:if test="string($message)">
                         <xsl:value-of select="$message"/>
@@ -34,9 +39,9 @@
                             <form method="post">
                                 <table class="newRoomTable">
                                     <tr>
-                                        <td class="eventLeftColumn">Raumname</td>
+                                        <td class="eventLeftColumn">Zimmername</td>
                                         <td>
-                                            <input type="text" name="add_roomname" id="add_roomname" placeholder="Raumname" autofocus="autofocus" size="30" required="required" />
+                                            <input type="text" name="add_roomname" id="add_roomname" placeholder="Zimmername" autofocus="autofocus" size="30" required="required" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -54,7 +59,7 @@
                                     <tr>
                                         <td class="eventLeftColumn">Bild</td>
                                         <td>
-                                            <input type="url" name="add_roomimage" id="add_roomimage" placeholder="http://www.yourRaum.com/image.jpg" size="30" required="required"/>
+                                            <input type="url" name="add_roomimage" id="add_roomimage" placeholder="http://www.yourZimmer.com/image.jpg" size="30" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -78,16 +83,16 @@
                         <div id="tabs-2">
                             <xsl:apply-templates select="document('../data/roomdb.xml')/hostelrooms"/>
                             <div style="clear: both;"></div>
-                            <div id="deleteroomdialog" class="dialog" title="Raum löschen" style="display:none;">
-                                Sind Sie sich sicher, dass Sie den Raum entfernen möchten?
+                            <div id="deleteroomdialog" class="dialog" title="Zimmer löschen" style="display:none;">
+                                Sind Sie sich sicher, dass Sie das Zimmer entfernen möchten?
                             </div>
-                            <div id="editroomdialog" class="dialog" title="Raum ändern" style="display:none;">
+                            <div id="editroomdialog" class="dialog" title="Zimmer ändern" style="display:none;">
                                 <form method="post">
                                     <table class="newRoomTable">
                                         <tr>
-                                            <td class="eventLeftColumn">Raumname</td>
+                                            <td class="eventLeftColumn">Zimmername</td>
                                             <td>
-                                                <input type="text" name="edit_roomname" id="edit_roomname" placeholder="Raumname" autofocus="autofocus" size="30" required="required" />
+                                                <input type="text" name="edit_roomname" id="edit_roomname" placeholder="Zimmername" autofocus="autofocus" size="30" required="required" />
                                             </td>
                                         </tr>
                                         <tr>
@@ -105,7 +110,7 @@
                                         <tr>
                                             <td class="eventLeftColumn">Bild</td>
                                             <td>
-                                                <input type="url" name="edit_roomimage" id="edit_roomimage" placeholder="http://www.yourRaum.com/image.jpg" size="30" required="required"/>
+                                                <input type="url" name="edit_roomimage" id="edit_roomimage" placeholder="http://www.yourZimmer.com/image.jpg" size="30" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>

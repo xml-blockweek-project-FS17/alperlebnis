@@ -37,9 +37,9 @@
                     </tr>
                 </table>
                 <div style="clear:both;"></div>
-                <div id="bookroomdialog" class="dialog" title="Raum buchen" style="display:none;">
+                <div id="bookroomdialog" class="dialog" title="Zimmer buchen" style="display:none;">
                     <form method="post">
-                        <table class="newBookingTable">
+                        <table>
                             <tr>
                                 <td class="eventLeftColumn">E-Mail</td>
                                 <td>
@@ -48,7 +48,7 @@
                             </tr>
                             <tr>
                                 <td class="eventLeftColumn">Anrede</td>
-                                <td>
+                                <td style="text-align: left;">
                                     <select name="book_salutation" id="book_salutation" required="required">
                                         <option value="herr">Herr</option>
                                         <option value="frau">Frau</option>
