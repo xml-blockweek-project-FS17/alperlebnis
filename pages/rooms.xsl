@@ -36,6 +36,7 @@
                         <td colspan = "2"><button type="button" id="showroom" href="#">Anzeigen</button></td>
                     </tr>
                 </table>
+                <div style="clear:both;"></div>
                 <div id="bookroomdialog" class="dialog" title="Raum buchen" style="display:none;">
                     <form method="post">
                         <table class="newBookingTable">
@@ -98,7 +99,6 @@
                 </div>
                 <div style="clear:both;"></div>
                 <div id="content"></div>
-                <div style="clear:both;"></div>
                 <xsl:call-template name="footer"/>
             </body>
         </html>

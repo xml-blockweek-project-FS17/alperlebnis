@@ -208,7 +208,8 @@ input[type=submit]{
 .roomitem
 {
     width: 468px;
-    min-height: 450px;
+    min-height: 440px;
+    height: 440px;
 }
 
 .adminroomitem
@@ -461,10 +462,11 @@ input[type=submit]{
     padding: 10px;
     padding-top: 10px;
     padding-bottom: 5px;
-    width: 445px;
-    margin-left: 7px;
     margin-right: 7px;
     height: auto;
     float: left;
     margin-top: 15px;
+    margin-left: -200px;
+    position: fixed;
+    width: auto;
 }

@@ -25,7 +25,6 @@ function init()
     $(".datepicker").datepicker("option", "dateFormat", "yy-mm-dd" );
     $(".datepicker").datepicker('option', {minDate: 0});
     $("#book_startdate").datepicker().datepicker("setDate", new Date());
-    $("#book_enddate").datepicker().datepicker("setDate", new Date());
     $("#showroom").click(function() {
         if($("#book_startdate").datepicker().val() == ''){ return; }
         if($("#book_enddate").datepicker().val() == ''){ return; }
