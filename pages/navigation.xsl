@@ -21,7 +21,7 @@
       <title>
         <xsl:value-of select="$pageName"/>
       </title>
- 
+
       <meta name="description" content="XML Blockwoche Hostel Alperlebnis"/>
       <meta author="Philipp Disler, Marc Nussbaumer, Fabrizio Rohrbach, Jonas Studer"/>
       <meta name="keywords" lang="de" conent="Alpen, Berge,Bergbauern, HardcoreXML"/>
@@ -33,7 +33,7 @@
     <xsl:param name="pageName" />
     <div class="header">
         <div id="wrap">
-      		<div style="width:100%"><img src="../data/pictures/header.png" width="970" height="150" alt="Alperlebnis+"/></div>
+      		<div style="width:100%"><img src="../data/pictures/header.jpg" width="970" height="150" alt="Alperlebnis+"/></div>
       		<div id="navigation">
                 <button onclick="location.href='../pages/home.xml'" type="button">Home</button>
                 <button onclick="location.href='../pages/rooms.xml'" type="button">Zimmer</button>

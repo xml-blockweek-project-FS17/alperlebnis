@@ -470,3 +470,10 @@ input[type=submit]{
     position: fixed;
     width: auto;
 }
+
+#showbookingsdialog.ui-dialog-content{
+    width: auto; !important;
+    height: 260px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}

@@ -312,7 +312,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <div id="showbookingsdialog" title="Zimmerbuchungen Zimmer {./@name}" class="bookingsdialog" roomid="{./@ID}" style="display:none;">
+                    <div id="showbookingsdialog" title="Zimmerbuchungen {./@name}" class="bookingsdialog" roomid="{./@ID}" style="display:none;">
                         <xsl:apply-templates select="bookings"/>
                     </div>
                 </td>
