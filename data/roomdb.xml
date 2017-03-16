@@ -1,13 +1,11 @@
-<hostelrooms xsi:noNamespaceSchemaLocation="roomdb_schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <room name='Edelweiss'>
+<hostelrooms xsi:noNamespaceSchemaLocation="roomdb_schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nextRoomId="6">
+    <room name='Edelweiss' ID="1">
         <price currency="CHF">100.00</price>
         <beds>2</beds>
         <image>../data/pictures/edelweiss-room.jpg</image>
-        <description>
-            Gemütliches helles Zimmer. Hier vergisst man schnell die Mühen des Tages.
-        </description>
-        <bookings>
-            <booking>
+        <description>Gemütliches helles Zimmer. Hier vergisst man schnell die Mühen des Tages.</description>
+        <bookings nextBookingId="3">
+            <booking ID="1">
                 <!--Use of xml-date to ensure that it is comparable in XPATH -->
                 <startdate>2017-09-24</startdate>
                 <enddate>2017-09-27</enddate>
@@ -23,7 +21,7 @@
                     <country>Schweiz</country>
                 </bookingaddress>
             </booking>
-            <booking>
+            <booking ID="2">
                 <!--Use of xml-date to ensure that it is comparable in XPATH -->
                 <startdate>2017-09-28</startdate>
                 <enddate>2017-09-29</enddate>
@@ -41,40 +39,32 @@
             </booking>
         </bookings>
     </room>
-    <room name='Enzian'>
+    <room name='Enzian' ID="2">
         <price currency="CHF">100.00</price>
         <beds>2</beds>
         <image>../data/pictures/enzian-room.jpg</image>
-        <description>
-            Stilvoll eingerichtetes Zimmer. Hier werden Sie schlafen wie im siebten Himmel.
-        </description>
+        <description>Stilvoll eingerichtetes Zimmer. Hier werden Sie schlafen wie im siebten Himmel.</description>
         <bookings></bookings>
     </room>
-    <room name='Alperose'>
+    <room name='Alperose' ID="3">
         <price currency="CHF">200.00</price>
         <beds>4</beds>
         <image>../data/pictures/Alpenrose-room.jpg</image>
-        <description>
-            Praktisches Familienzimmer mit Elternbett und einem Etagenbett für die Kinder.
-        </description>
+        <description>Praktisches Familienzimmer mit Elternbett und einem Etagenbett für die Kinder.</description>
         <bookings></bookings>
     </room>
-    <room name='Krokus'>
+    <room name='Krokus' ID="4">
         <price currency="CHF">400.00</price>
         <beds>10</beds>
         <image>../data/pictures/Krokus-room.jpg</image>
-        <description>
-            Massenschlag mit praktischer Raumaufteilung für Gruppen bis zu 10 Personen.
-        </description>
+        <description>Massenschlag mit praktischer Raumaufteilung für Gruppen bis zu 10 Personen.</description>
         <bookings></bookings>
     </room>
-    <room name='Glockenblume'>
+    <room name='Glockenblume' ID="5">
         <price currency="CHF">150.00</price>
         <beds>1</beds>
         <image>../data/pictures/Glockenblume-room.jpg</image>
-        <description>
-            In warmen Farbtönen eingerichtetes Einzelzimmer.
-        </description>
+        <description>In warmen Farbtönen eingerichtetes Einzelzimmer.</description>
         <bookings></bookings>
     </room>
 </hostelrooms>

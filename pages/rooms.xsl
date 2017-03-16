@@ -1,66 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    
-    <!--Navigation contains no matches, use call-template if you want to use it--> 
+<?xml version="1.0"?>
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml">
     <xsl:import href="navigation.xsl"/>
-      
-    <xsl:output method="html" version="4.01" indent="yes"/>
-    <xsl:output doctype-system="http://www.w3.org/TR/html4/strict.dtd"/>
-    <xsl:output doctype-public="-//W3C//DTD HTML 4.01//EN"/>
+    <!--Param should only be set over XSLTProcess->setParameter() but needs a placeholder to work properly-->
+    <xsl:param name="message" select="''"/>
+    <xsl:output method="html" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" indent="yes"/>
 
     <xsl:template match="/">
-        <html lang="de">
+        <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
             <xsl:call-template name="meta">
-                <xsl:with-param name="pageName">Hostelzimmer</xsl:with-param>
+                <xsl:with-param name="pageName">Zimmerangebote</xsl:with-param>
             </xsl:call-template>
-     
             <body>
-                <xsl:call-template name="header">
-                    <xsl:with-param name="pageName">Hostelzimmer</xsl:with-param>
-                </xsl:call-template>
-                <xsl:apply-templates select="document('../data/roomdb.xml')/hostelrooms"/>
-                 <xsl:call-template name="footer"/>
+                <xsl:call-template name="header" />
+
+                <div class="message">
+                    <xsl:if test="string($message)">
+                        <xsl:value-of select="$message"/>
+                    </xsl:if>
+                </div>
+                <table class="newBookingTable">
+                    <tr>
+                        <td class="eventLeftColumn">Anmeldedatum Start</td>
+                        <td>
+                            <input type="date" name="book_startdate" id="book_startdate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="eventLeftColumn">Anmeldedatum Ende</td>
+                        <td>
+                            <input type="date" name="book_enddate" id="book_enddate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
+                        </td>
+                    </tr>
+                </table>
+                <div style="clear:both;"></div>
+                <div id="content"></div>
+                <div style="clear:both;"></div>
+                <xsl:call-template name="footer"/>
             </body>
         </html>
-        
-    </xsl:template>
-
-    <xsl:template match="room">
-        <xsl:variable name="count" select="count(/hostelrooms/room)"/>
-        <xsl:variable name="index" select="count(preceding-sibling::*[name() = name(current())])+1"/>
-        <xsl:variable name="column" select="(count(preceding-sibling::*[name() = name(current())])+1) mod 5"/>
-        <xsl:choose>
-            <xsl:when test="$column = 0">
-                <div class="lastitem roomitem">
-                    <xsl:call-template name="rooms"/>
-                </div>
-            </xsl:when>
-            <xsl:otherwise>
-                <div class="item roomitem">
-                    <xsl:call-template name="rooms"/>
-                </div>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template name="rooms">
-        <table>
-            <tr>
-                <td colspan="2"><center><b><xsl:value-of select="./@name"/></b></center></td>
-            </tr>
-            <tr>
-                <td colspan="2"><center><img src="{image}" width="300" height="180"/></center></td>
-            </tr>
-            <tr>
-                <td class="itemvaluename"><b>Preis</b></td><td><xsl:value-of select="price/@currency"/>: <xsl:apply-templates select="price"/></td>
-            </tr>
-            <tr>
-                <td class="itemvaluename"><b>Anz. Betten</b></td><td><xsl:apply-templates select="beds"/></td>
-            </tr>
-            <tr>
-                <td class="itemvaluename"><b>Beschreibung</b></td><td><xsl:apply-templates select="description"/></td>
-            </tr>
-        </table>
     </xsl:template>
 
 </xsl:stylesheet>

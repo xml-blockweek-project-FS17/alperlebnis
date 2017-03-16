@@ -28,7 +28,7 @@
 								</fo:root>
 				</xsl:template>
 				
-				<xsl:template match="activity">
+				<xsl:template match="booking">
 								<fo:table space-after.optimum="20pt" width="13cm" font-size="11pt">
 												<fo:table-column column-number="1"/>
 												<fo:table-column column-number="2"/>
@@ -37,77 +37,91 @@
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block font-size="14pt" color="red" font-weight="900" text-align="left">
-																												<xsl:value-of select="title"/>
-																								</fo:block>
-																				</fo:table-cell>
-																				<fo:table-cell number-rows-spanned="10">
-																								<fo:block>
-																												<!--<fo:external-graphic src="xml-f17.enterpriselab.ch/~tbdisler/data/pictures/Stall_Bes.jpg" border-width="0cm" width="2.5cm" height="2.5cm"/>-->
-																												<fo:external-graphic src="{image/@href}" content-height="scale-to-fit" height="2.5in"  content-width="2.5in" scaling="non-uniform"/>
-																											
+																												Raumname: <xsl:value-of select="roomname"/>
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
                                                                 <fo:table-row>
                                                                                 <fo:table-cell  padding-top="2pt" number-columns-spanned="1">
 																								<fo:block>
-																												<xsl:value-of select="description"/>
+																												Anreisedatum: <xsl:value-of select="startdate"/>
 																								</fo:block>
 																				</fo:table-cell>
                                                                 </fo:table-row>
                                                                 <fo:table-row>
 																				<fo:table-cell padding-top="4pt" number-columns-spanned="2" padding-bottom="4pt">
 																								<fo:block>
-																												Veranstalter: <xsl:value-of select="provider"/>
+																												Abreisedatum: <xsl:value-of select="enddate"/>
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2" padding-bottom="4pt">
 																								<fo:block>
-																												Veranstaltungsdatum: <xsl:value-of select="activitydate"/>
+																												Email: <xsl:value-of select="email"/>
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell number-columns-spanned="2" padding-bottom="4pt">
+																								<fo:block>
+																												Preis: <xsl:value-of select="paidprice"/>
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
                                                                 <fo:table-row>
 																				<fo:table-cell padding-top="3pt" number-columns-spanned="2" padding-bottom="1pt">
 																								<fo:block>
-																												Anmeldungszeitraum 
+																												Buchungsadresse: 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
                                                                 <fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												<xsl:value-of select="signupstart"/> bis <xsl:value-of select="signupend"/> 
+																												Anrede: <xsl:value-of select="salutation"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
-																				<fo:table-cell padding-top="6pt" number-columns-spanned="2" padding-bottom="1pt">
-																								<fo:block>
-																												Anmeldung per:
-																								</fo:block>
-																				</fo:table-cell>
-																</fo:table-row>
-                                                                <fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Telefon: <xsl:value-of select="contact/phone"/>
+																												Vorname: <xsl:value-of select="firstname"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
-                                                               <fo:table-row>
+																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												E-Mail: <xsl:value-of select="contact/email"/>
+																												Nachname: <xsl:value-of select="lastname"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
-                                                                <fo:table-row>
-																				<fo:table-cell padding-top="7pt" number-columns-spanned="2" padding-bottom="4pt">
+																<fo:table-row>
+																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Preis: <xsl:value-of select="price"/> Fr.
+																												Strasse: <xsl:value-of select="address"/> 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell number-columns-spanned="2">
+																								<fo:block>
+																												PLZ: <xsl:value-of select="zipcode"/> 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell number-columns-spanned="2">
+																								<fo:block>
+																												Ort: <xsl:value-of select="state"/> 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell number-columns-spanned="2">
+																								<fo:block>
+																												Land: <xsl:value-of select="country"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>

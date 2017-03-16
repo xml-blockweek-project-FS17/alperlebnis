@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../pages/bookingconfirmation.xsl"?>
+<booking ID="2">
+    <!--Use of xml-date to ensure that it is comparable in XPATH -->
+    <roomname>Edelweiss</roomname>
+    <startdate>2017-09-28</startdate>
+    <enddate>2017-09-29</enddate>
+    <email>max@muster.ch</email>
+    <paidprice>200.00</paidprice>
+    <bookingaddress>
+        <salutation>Herr</salutation>
+        <firstname>Max</firstname>
+        <lastname>Muster</lastname>
+        <address>Musterstrasse 10</address>
+        <zipcode>6005</zipcode>
+        <state>Luzern</state>
+        <country>Schweiz</country>
+    </bookingaddress>
+</booking>
