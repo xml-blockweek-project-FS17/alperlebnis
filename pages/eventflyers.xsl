@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:date="http://exslt.org/dates-and-times" extension-element-prefixes="date">
 				
 				<xsl:template match="activities">
 								<fo:root>
@@ -27,6 +27,10 @@
 				</xsl:template>
 				
 				<xsl:template match="activity">
+                                    <xsl:variable name="today" select="translate(substring-before(date:date-time(), 'T'), '-', '')"/>
+                                    <xsl:variable name="start" select="translate(signupstart, '-', '')"/>
+                                    <xsl:variable name="end" select="translate(signupend, '-', '')"/>
+                                        <xsl:if test="$start &lt;= $today and $today &lt;= $end">
 								<fo:table space-after.optimum="20pt" width="13cm" font-size="11pt">
 												<fo:table-column column-number="1"/>
 												<fo:table-column column-number="2"/>
@@ -109,5 +113,6 @@
 																</fo:table-row>
 												</fo:table-body>
 								</fo:table>	
+                                        </xsl:if>
 				</xsl:template>
 </xsl:stylesheet>
