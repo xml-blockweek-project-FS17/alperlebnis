@@ -25,7 +25,7 @@
                         <h2> Bitte melden Sie sich an um in den Admin Bereich zu gelangen </h2>
                         <table>
                             <tr>
-                                <td>Username:</td><td><input type="text" id="username" ></input></td>
+                                <td>Benutzername:</td><td><input type="text" id="username" ></input></td>
                             </tr>
                             <tr>
                                 <td>Passwort:</td><td><input type="text" id="password"></input></td>
