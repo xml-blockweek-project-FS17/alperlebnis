@@ -150,6 +150,7 @@ function init()
             modal: true,
             buttons: {
                 Ok: function() {
+                   
                     $eventtitle = $('#edit_eventtitle').val();
                     $eventimage = $('#edit_eventimage').val();
                     $eventprovider = $('#edit_eventprovider').val();
@@ -160,7 +161,8 @@ function init()
                     $eventphone = $('#edit_eventcontact_phone').val();
                     $eventemail = $('#edit_eventcontact_email').val();
                     $eventdescription = $('#edit_eventdescription').val();
-                    if($eventid == '' || $eventtitle == '' || $eventprovider == '' || $eventactivitydate == '' || $eventdescription == '' || $eventimage == '' || $eventcontact_phone == '' || $eventcontact_email == '' || $eventprice == '' || $eventsignupstart == '' || $eventsignupend == ''){ return; }
+
+                    if($eventid == '' || $eventtitle == '' || $eventprovider == '' || $eventactivitydate == '' || $eventdescription == '' || $eventimage == '' || $eventphone == '' || $eventemail == '' || $eventprice == '' || $eventsignupstart == '' || $eventsignupend == ''){ return; }
                     var data = loadContent('../data/activitydb.xml', '../data/activitydb.xml', '../data/activitydb_schema.xsd', '../pages/activity.xsl', 'editEvent',
                         { id: $eventid, title: $eventtitle, provider: $eventprovider, activitydate: $eventactivitydate, description: $eventdescription, image: $eventimage,
                             contact_phone: $eventphone, contact_email: $eventemail, price: $eventprice, signupstart: $eventsignupstart, signupend: $eventsignupend });
