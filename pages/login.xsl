@@ -32,9 +32,6 @@
                             </tr>
                         </table>
                         <button type="button" id="navLink1" href="#" onclick="login();">Log in</button>
-                        <form action="FO/print-activities.php" method="get">
-                            <input type="submit" value="Generate Activities"/>
-                        </form>
                     </center>
                 </div>
             </div>
