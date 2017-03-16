@@ -26,10 +26,11 @@ function init()
     $(".datepicker").datepicker('option', {minDate: 0});
     $("#book_startdate").datepicker().datepicker("setDate", new Date());
     $("#showroom").click(function() {
-        if($("#book_startdate").datepicker().val() == ''){ return; }
-        if($("#book_enddate").datepicker().val() == ''){ return; }
+        $startdate = $("#book_startdate").datepicker().val();
+        $enddate = $("#book_enddate").datepicker().val();
+        if($startdate == '' || $enddate == ''){ return; }
         var data = loadContent('../data/roomdb.xml', '../data/roomdb.xml', '../data/roomdb_schema.xsd', '../pages/freerooms.xsl', 'loadFreeRooms',
-            { startdate: $("#book_startdate").datepicker().val(), enddate: $("#book_enddate").datepicker().val() });
+            { startdate: $startdate, enddate: $enddate });
         $('#content').empty().append($.parseHTML(data));
         init();
     });
@@ -46,6 +47,7 @@ function init()
         $roombeds = $("#add_roombeds").val();
         $roomimage = $("#add_roomimage").val();
         $roomdescription = $("#add_roomdescription").val();
+        if($roomname == '' || $roomprice == '' || $roombeds == '' || $roomimage == '' || $roomdescription == ''){ return; }
         var data = loadContent('../data/roomdb.xml', '../data/roomdb.xml', '../data/roomdb_schema.xsd', '../pages/rooms.xsl', 'writeNewRoom',
             { name: $roomname, price: $roomprice, beds: $roombeds, image: $roomimage, description: $roomdescription });
         alert(data);
@@ -72,6 +74,7 @@ function init()
                     $roomprice = $('#edit_roomprice').val();
                     $roombeds = $('#edit_roombeds').val();
                     $roomdescription = $('#edit_roomdescription').val();
+                    if($roomid == '' || $roomimage == '' || $roomname == '' || $roomprice == '' || $roombeds == '' || $roomdescription == ''){ return; }
                     var data = loadContent('../data/roomdb.xml', '../data/roomdb.xml', '../data/roomdb_schema.xsd', '../pages/admin.xsl', 'editRoom',
                         { id: $roomid, name: $roomname, price: $roomprice, beds: $roombeds, image: $roomimage, description: $roomdescription });
                     $( this ).dialog( "close" );
@@ -90,6 +93,7 @@ function init()
             modal: true,
             buttons: {
                 Ok: function() {
+                    if($roomid == ''){ return; }
                     var data = loadContent('../data/roomdb.xml', '../data/roomdb.xml', '../data/roomdb_schema.xsd', '../pages/rooms.xsl', 'deleteRoom',
                         { id: $roomid });
                     $( this ).dialog( "close" );
@@ -113,6 +117,7 @@ function init()
         $eventprice = $("#add_eventprice").val();
         $eventsignupstart = $("#add_eventsignupstart").val();
         $eventsignupend = $("#add_eventsignupend").val();
+        if($eventtitle == '' || $eventprovider == '' || $eventactivitydate == '' || $eventdescription == '' || $eventimage == '' || $eventcontact_phone == '' || $eventcontact_email == '' || $eventprice == '' || $eventsignupstart == '' || $eventsignupend == ''){ return; }
         var data = loadContent('../data/activitydb.xml', '../data/activitydb.xml', '../data/activitydb_schema.xsd', '../pages/activity.xsl', 'writeNewActivity',
             { title: $eventtitle, provider: $eventprovider, activitydate: $eventactivitydate, description: $eventdescription, image: $eventimage,
                 contact_phone: $eventcontact_phone, contact_email: $eventcontact_email, price: $eventprice, signupstart: $eventsignupstart, signupend: $eventsignupend });
@@ -155,6 +160,7 @@ function init()
                     $eventphone = $('#edit_eventcontact_phone').val();
                     $eventemail = $('#edit_eventcontact_email').val();
                     $eventdescription = $('#edit_eventdescription').val();
+                    if($eventid == '' || $eventtitle == '' || $eventprovider == '' || $eventactivitydate == '' || $eventdescription == '' || $eventimage == '' || $eventcontact_phone == '' || $eventcontact_email == '' || $eventprice == '' || $eventsignupstart == '' || $eventsignupend == ''){ return; }
                     var data = loadContent('../data/activitydb.xml', '../data/activitydb.xml', '../data/activitydb_schema.xsd', '../pages/activity.xsl', 'editEvent',
                         { id: $eventid, title: $eventtitle, provider: $eventprovider, activitydate: $eventactivitydate, description: $eventdescription, image: $eventimage,
                             contact_phone: $eventphone, contact_email: $eventemail, price: $eventprice, signupstart: $eventsignupstart, signupend: $eventsignupend });
@@ -174,6 +180,7 @@ function init()
             modal: true,
             buttons: {
                 Ok: function() {
+                    if($eventid == ''){ return; }
                     var data = loadContent('../data/activitydb.xml', '../data/activitydb.xml', '../data/activitydb_schema.xsd', '../pages/activity.xsl', 'deleteEvent',
                         { id: $eventid });
                     $( this ).dialog( "close" );
@@ -202,6 +209,7 @@ function init()
                     $bookzipcode = $('#book_zipcode').val();
                     $bookstate = $('#book_state').val();
                     $bookcountry = $('#book_country').val();
+                    if($roomid == '' || $bookstartdate == '' || $bookenddate == '' || $bookemail == '' || $booksalutation == '' || $bookfirstname == '' || $booklastname == '' || $bookaddress == '' || $bookzipcode == '' || $bookstate == '' || $bookcountry == ''){ return; }
                     var data = loadContent('../data/roomdb.xml', '../data/roomdb.xml', '../data/roomdb_schema.xsd', '../pages/rooms.xsl', 'writeNewBooking',
                         { roomid: $roomid, startdate: $bookstartdate, enddate: $bookenddate, email: $bookemail, salutation: $booksalutation, firstname: $bookfirstname, lastname: $booklastname, address: $bookaddress, zipcode: $bookzipcode, state: $bookstate, country: $bookcountry });
                     $( this ).dialog( "close" );
@@ -216,6 +224,7 @@ function init()
     });
     $(".showbooking").click(function() {
         $roomid = $(this).parent().parent().parent().find('table').attr('id');
+        if($roomid == ''){ return; }
         $(".bookingsdialog[roomid="+$roomid+"]").dialog();
     });
 }

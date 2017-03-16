@@ -144,7 +144,7 @@ button:hover {
     width: 468px;
     margin-left: 7px;
     margin-right: 7px;
-    height: 570px;
+    height: auto;
     float: left;
     margin-top: 15px;
 }

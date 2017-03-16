@@ -208,7 +208,7 @@
                                 Sind Sie sich sicher, dass Sie dieses Angebot entfernen möchten?
                             </div>
                             <div id="editeventdialog" class="dialog" title="Angebot ändern" style="display:none;">
-                                <form class="newEventForm" method="post">
+                                <form method="post">
                                     <table class="newEventTable">
                                         <tr>
                                             <td class="eventLeftColumn">Eventname</td>
