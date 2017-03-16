@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="../pages/FO/eventflyers.xsl"?>
+<?xml-stylesheet type="text/xsl" href="../pages/eventflyers.xsl"?>
 <activities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="activitydb_schema.xsd" nextActivityId="9">
     <user name="bauer">
         <activity ID="1">
             <title>Stallbesichtigung</title>
             <provider>Bauern Verein HSLU</provider>
             <activitydate>2017-09-30</activitydate>
-            <description>                Die heile Bergwelt bei einem Schweizer Bergbauern erleben und selbst Hand anlegen.&#xD;
+            <description>                
+				Die heile Bergwelt bei einem Schweizer Bergbauern erleben und selbst Hand anlegen.
             </description>
             <image>http://staufer.at/wp-content/uploads/2013/09/Stall-2.jpg</image>
             <contact>
@@ -24,7 +25,7 @@
             <description>
                 Gold waschen wie im wilden Westen
             </description>
-            <image>../data/pictures/gold_wash.jpg</image>
+            <image>http://img.myswitzerland.com/mys/n64477/images/buehne/gondogoldwaschen01.jpg</image>
             <contact>
                 <phone>+41 41 777 77 77</phone>
                 <email>gold.napf@hslu.ch</email>
@@ -33,5 +34,9 @@
             <signupstart>2017-09-10</signupstart>
             <signupend>2017-09-10</signupend>
         </activity>
-    <activity ID="8"><title>Wildwasser im Bergfluss</title><provider>Raftingverband HSLU</provider><activitydate>2017-07-30</activitydate><description>Geniessen Sie die frische Alpenluft, w&#xE4;hrend Sie einen Bergfluss herunterfahren.</description><image>http://www.3glav.com/wp-content/uploads/2016/01/soca-rafting-slovenia-bovec.jpg</image><contact><phone>041 777 77 77</phone><email>hslu@hslu.ch</email></contact><price currency="CHF">200</price><signupstart>2017-03-03</signupstart><signupend>2017-06-30</signupend></activity></user>    
+    <activity ID="8">
+	<title>Wildwasser im Bergfluss</title>
+	<provider>Raftingverband HSLU</provider>
+	<activitydate>2017-07-30</activitydate>
+	<description>Geniessen Sie die frische Alpenluft, w&#xE4;hrend Sie einen Bergfluss herunterfahren.</description><image>https://upload.wikimedia.org/wikipedia/en/e/e1/Ark_white_water1101.jpg</image><contact><phone>041 777 77 77</phone><email>hslu@hslu.ch</email></contact><price currency="CHF">200</price><signupstart>2017-03-03</signupstart><signupend>2017-06-30</signupend></activity></user>    
 </activities>

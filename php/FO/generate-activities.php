@@ -15,7 +15,7 @@ $xml->loadXML($data);
 
 // load XSL
 $xsl = new DOMDocument();
-$xsl->load('eventflyers.xsl');
+$xsl->load('../../pages/eventflyers.xsl');
 
 // transform
 $processor = new XSLTProcessor();
