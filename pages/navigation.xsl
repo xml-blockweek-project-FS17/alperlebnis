@@ -37,6 +37,9 @@
             <button onclick="location.href='../pages/activitymanagement.xml'" type="button">
               Angebotsverwaltung
             </button>
+            <button onclick="location.href='../pages/statistics.xml'" type="button">
+                Statistics
+            </button>
              <button onclick="checkLogin()" type="button">
               Adminbereich
             </button>
