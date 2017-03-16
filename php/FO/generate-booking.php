@@ -8,14 +8,14 @@
 
 
 // load XML
-$data = file_get_contents('../../data/activitydb.xml');
+$data = file_get_contents('../../data/lastbooking.xml');
 
 $xml = new DOMDocument();
 $xml->loadXML($data);
 
 // load XSL
 $xsl = new DOMDocument();
-$xsl->load('bookingconfirmation.xsl');
+$xsl->load('../../pages/bookingconfirmation.xsl');
 
 // transform
 $processor = new XSLTProcessor();
