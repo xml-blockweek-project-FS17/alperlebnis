@@ -23,13 +23,13 @@
                     <tr>
                         <td class="eventLeftColumn">Anmeldedatum Start</td>
                         <td>
-                            <input type="date" name="book_startdate" id="book_startdate2" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
+                            <input type="date" name="book_startdate" id="book_startdate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
                         </td>
                     </tr>
                     <tr>
                         <td class="eventLeftColumn">Anmeldedatum Ende</td>
                         <td>
-                            <input type="date" name="book_enddate" id="book_enddate2" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
+                            <input type="date" name="book_enddate" id="book_enddate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
                         </td>
                     </tr>
                 </table>

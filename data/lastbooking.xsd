@@ -1,0 +1,47 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="booking">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Date is used to compare dates with xpath, this would not
+                be supported with the european format -->
+                <xs:element name="roomname" type="xs:string"/>
+                <xs:element name="startdate" type="xs:date"/>
+                <xs:element name="enddate" type="xs:date"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="paidprice" type="xs:float"/>
+                <xs:element ref="bookingaddress"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:positiveInteger"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="bookingaddress">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="salutation" type="xs:string"/>
+                <xs:element name="firstname" type="xs:string"/>
+                <xs:element name="lastname" type="xs:string"/>
+                <xs:element name="address" type="xs:string"/>
+                <xs:element name="zipcode" type="xs:positiveInteger"/>
+                <xs:element name="state" type="xs:string"/>
+                <xs:element name="country" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Definition of more specific datatypes -->
+    <xs:complexType name="roomprice">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="currency" type="currency" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="currency">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CHF"/>
+            <xs:enumeration value="EUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

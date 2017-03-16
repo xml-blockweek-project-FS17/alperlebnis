@@ -24,8 +24,8 @@ function init()
     $(".datepicker").datepicker();
     $(".datepicker").datepicker("option", "dateFormat", "yy-mm-dd" );
     $(".datepicker").datepicker('option', {minDate: 0});
-    $("#book_startdate2").datepicker().datepicker("setDate", new Date());
-    $("#book_enddate2").datepicker({
+    $("#book_startdate").datepicker().datepicker("setDate", new Date());
+    $("#book_enddate").datepicker({
     }).on("change", function(dateText) {
         var data = loadContent('../data/roomdb.xml', '../data/roomdb.xml', '../data/roomdb_schema.xsd', '../pages/freerooms.xsl', 'loadFreeRooms',
             { startdate: $("#book_startdate2").datepicker().val(), enddate: $("#book_enddate2").datepicker().val() });
