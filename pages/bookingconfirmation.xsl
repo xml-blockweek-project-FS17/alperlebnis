@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
 				
-				<xsl:template match="activities">
+				<xsl:template match="/">
 								<fo:root>
 												<fo:layout-master-set>
 																<fo:simple-page-master master-name="event_list" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="2cm" margin-left="2.5cm" margin-right="2.5cm">
@@ -79,49 +79,49 @@
                                                                 <fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Anrede: <xsl:value-of select="salutation"/> 
+																												Anrede: <xsl:value-of select="bookingaddress/salutation"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Vorname: <xsl:value-of select="firstname"/> 
+																												Vorname: <xsl:value-of select="bookingaddress/firstname"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Nachname: <xsl:value-of select="lastname"/> 
+																												Nachname: <xsl:value-of select="bookingaddress/lastname"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Strasse: <xsl:value-of select="address"/> 
+																												Strasse: <xsl:value-of select="bookingaddress/address"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												PLZ: <xsl:value-of select="zipcode"/> 
+																												PLZ: <xsl:value-of select="bookingaddress/zipcode"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Ort: <xsl:value-of select="state"/> 
+																												Ort: <xsl:value-of select="bookingaddress/state"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
 																								<fo:block>
-																												Land: <xsl:value-of select="country"/> 
+																												Land: <xsl:value-of select="bookingaddress/country"/> 
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>

@@ -21,7 +21,7 @@
             <provider>Napf Gold Erlebnis</provider>
             <activitydate>2017-10-05</activitydate>
             <description>Gold waschen wie im wilden Westen</description>
-            <image>../data/pictures/gold_wash.jpg</image>
+            <image>http://cdn01.meventi.de/data/event/43/3683/34161-gold-selbst-waschen.jpg</image>
             <contact>
                 <phone>+41 41 777 77 77</phone>
                 <email>gold.napf@hslu.ch</email>
@@ -30,5 +30,5 @@
             <signupstart>2017-09-10</signupstart>
             <signupend>2017-09-10</signupend>
         </activity>
-    <activity ID="8"><title>Wildwasser im Bergfluss</title><provider>Raftingverband HSLU</provider><activitydate>2017-07-30</activitydate><description>Geniessen Sie die frische Alpenluft, w&#xE4;hrend Sie einen Bergfluss herunterfahren.</description><image>http://www.3glav.com/wp-content/uploads/2016/01/soca-rafting-slovenia-bovec.jpg</image><contact><phone>041 777 77 77</phone><email>hslu@hslu.ch</email></contact><price currency="CHF">200</price><signupstart>2017-03-03</signupstart><signupend>2017-06-30</signupend></activity></user>    
+    <activity ID="8"><title>Wildwasser im Bergfluss</title><provider>Raftingverband HSLU</provider><activitydate>2017-07-30</activitydate><description>Geniessen Sie die frische Alpenluft, w&#xE4;hrend Sie einen Bergfluss herunterfahren.</description><image>http://www.rafting.com/wp-content/gallery/penn/2006_0721image0005.jpg</image><contact><phone>041 777 77 77</phone><email>hslu@hslu.ch</email></contact><price currency="CHF">200</price><signupstart>2017-03-03</signupstart><signupend>2017-06-30</signupend></activity></user>    
 </activities>
