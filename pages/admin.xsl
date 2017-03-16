@@ -27,8 +27,8 @@
                         <ul>
                             <li><a href="#tabs-1">Zimmer hinzufügen</a></li>
                             <li><a href="#tabs-2">Zimmer verwalten</a></li>
-                            <li><a href="#tabs-3">Angebote hinzufügen</a></li>
-                            <li><a href="#tabs-4">Angebote verwalten</a></li>
+                            <li><a href="#tabs-3">Aktivitäten hinzufügen</a></li>
+                            <li><a href="#tabs-4">Aktivitäten verwalten</a></li>
                         </ul>
                         <div id="tabs-1">
                             <form method="post">

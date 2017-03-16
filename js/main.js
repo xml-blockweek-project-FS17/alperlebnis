@@ -207,7 +207,7 @@ function init()
                         { roomid: $roomid, startdate: $bookstartdate, enddate: $bookenddate, email: $bookemail, salutation: $booksalutation, firstname: $bookfirstname, lastname: $booklastname, address: $bookaddress, zipcode: $bookzipcode, state: $bookstate, country: $bookcountry });
                     $( this ).dialog( "close" );
                     alert(data);
-                    $( this ).dialog( "close" );
+                    window.open('../php/FO/generate-booking.php', '_blank');
                 },
                 Abbrechen: function() {
                     $( this ).dialog( "close" );

@@ -9,8 +9,15 @@
   <xsl:template name="meta">
     <xsl:param name="pageName" />
     <head>
-      <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-      <script src="../js/simpleLogin.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/jquery-ui.structure.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/jquery-ui.theme.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <script src="../js/jquery-3.1.1.js" type="text/javascript">&#160;</script>
+        <script src="../js/jquery-ui.js" type="text/javascript">&#160;</script>
+        <script src="../js/jquery.cookie.js" type="text/javascript">&#160;</script>
+        <script src="../js/main.js" type="text/javascript">&#160;</script>
+        <script src="../js/login.js" type="text/javascript">&#160;</script>
       <title>
         <xsl:value-of select="$pageName"/>
       </title>
@@ -28,22 +35,11 @@
         <div id="wrap">
       		<div style="width:100%"><img src="../data/pictures/header.png" width="970" height="150" alt="Alperlebnis+"/></div>
       		<div id="navigation">
-      		  <button onclick="location.href='../pages/home.xml'" type="button">
-              Home
-            </button>
-            <button onclick="location.href='../pages/rooms.xml'" type="button">
-              Zimmerangebote
-            </button>
-            <button onclick="location.href='../pages/activitymanagement.xml'" type="button">
-              Angebotsverwaltung
-            </button>
-            <button onclick="location.href='../pages/statistics.xml'" type="button">
-                Statistics
-            </button>
-             <button onclick="checkLogin()" type="button">
-              Adminbereich
-            </button>
-      			
+                <button onclick="location.href='../pages/home.xml'" type="button">Home</button>
+                <button onclick="location.href='../pages/rooms.xml'" type="button">Zimmer</button>
+                <button onclick="location.href='../pages/activity.xml'" type="button">Aktivitäten</button>
+                <button onclick="location.href='../pages/statistics.xml'" type="button">Statistiken</button>
+                <button onclick="checkLogin()" type="button">Verwaltung</button>
       		</div>
       		
       		<div id="content"></div>
