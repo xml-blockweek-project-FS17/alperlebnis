@@ -14,29 +14,29 @@
 
     <xsl:template name="rooms">
         <div>
-            <div class="roomImage" style="background-image:url({image})">
+            <div class="itemvaluename roomImage roomitemimage" style="background-image:url({image})">
+                <button class="bookingButton bookroom" title="Buchungen"></button>
             </div>
         </div>
 
-        <center><h2><xsl:value-of select="./@name"/></h2></center>
+        <center><h2><div class="itemvaluename roomitemname"><xsl:value-of select="./@name"/></div></h2></center>
 
-        <div class="message">
-            <xsl:if test="string($message)">
-                <xsl:value-of select="$message"/>
-            </xsl:if>
-        </div>
-        <table id="{./@ID}" class="itemTable">
+        <table id="{./@ID}" class="roomitemTable">
             <tr>
-                <td class="itemvaluename"><b>Preis</b></td><td><xsl:value-of select="price/@currency"/>: <xsl:apply-templates select="price"/></td>
+                <td class="itemvaluename"><b>Preis</b></td><td><xsl:value-of select="price/@currency"/>: <div class="roomitemprice"><xsl:apply-templates select="price"/></div></td>
             </tr>
             <tr>
-                <td class="itemvaluename"><b>Anz. Betten</b></td><td><xsl:apply-templates select="beds"/></td>
+                <td class="itemvaluename"><b>Anz. Betten</b></td><td><div class="roomitembeds"><xsl:apply-templates select="beds"/></div></td>
             </tr>
             <tr>
-                <td class="itemvaluename"><b>Beschreibung</b></td><td><xsl:apply-templates select="description"/></td>
+                <td class="itemvaluename"><b>Beschreibung</b></td><td><div class="roomitemdescription"><xsl:apply-templates select="description"/></div></td>
             </tr>
             <tr>
-                <td class="itemvaluename"><button type="button" class="bookroom" href="#">Buchen</button></td><td></td>
+                <td colspan="2">
+                    <div id="showbookingsdialog" title="Zimmerbuchungen Zimmer {./@name}" class="bookingsdialog" roomid="{./@ID}" style="display:none;">
+                        <xsl:apply-templates select="bookings"/>
+                    </div>
+                </td>
             </tr>
         </table>
     </xsl:template>

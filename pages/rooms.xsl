@@ -21,18 +21,81 @@
                 </div>
                 <table class="newBookingTable">
                     <tr>
-                        <td class="eventLeftColumn">Anmeldedatum Start</td>
+                        <td class="eventLeftColumn">Von</td>
                         <td>
-                            <input type="date" name="book_startdate" id="book_startdate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
+                            <input type="text" name="book_startdate" id="book_startdate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
                         </td>
                     </tr>
                     <tr>
-                        <td class="eventLeftColumn">Anmeldedatum Ende</td>
+                        <td class="eventLeftColumn">Bis</td>
                         <td>
-                            <input type="date" name="book_enddate" id="book_enddate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
+                            <input type="text" name="book_enddate" id="book_enddate" placeholder="yyyy-MM-dd" size="9" class="datepicker"/>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan = "2"><button type="button" id="showroom" href="#">Anzeigen</button></td>
+                    </tr>
                 </table>
+                <div id="bookroomdialog" class="dialog" title="Raum buchen" style="display:none;">
+                    <form method="post">
+                        <table class="newBookingTable">
+                            <tr>
+                                <td class="eventLeftColumn">E-Mail</td>
+                                <td>
+                                    <input type="email" name="book_email" placeholder="E-Mail" id="book_email" size="30" required="required" autofocus="autofocus"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="eventLeftColumn">Anrede</td>
+                                <td>
+                                    <select name="book_salutation" id="book_salutation" required="required">
+                                        <option value="herr">Herr</option>
+                                        <option value="frau">Frau</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="eventLeftColumn">Vorname</td>
+                                <td>
+                                    <input type="text" name="book_firstname" placeholder="Vorname" id="book_firstname" size="30" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="eventLeftColumn">Nachname</td>
+                                <td>
+                                    <input type="text" name="book_lastname" placeholder="Nachname" id="book_lastname" size="30" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="eventLeftColumn">Addresse</td>
+                                <td>
+                                    <input type="text" name="book_address" placeholder="Addresse" id="book_address" size="30" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="eventLeftColumn">PLZ</td>
+                                <td>
+                                    <input type="text" name="book_zipcode" placeholder="ZIP Code" id="book_zipcode" size="30" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="eventLeftColumn">Ort</td>
+                                <td>
+                                    <input type="text" name="book_state" placeholder="Ort" id="book_state" size="30" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="eventLeftColumn">Land</td>
+                                <td>
+                                    <input type="text" name="book_country" placeholder="Land" id="book_country" size="30" required="required"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <br/>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
                 <div style="clear:both;"></div>
                 <div id="content"></div>
                 <div style="clear:both;"></div>

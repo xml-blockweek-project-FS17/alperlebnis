@@ -25,11 +25,14 @@ function init()
     $(".datepicker").datepicker("option", "dateFormat", "yy-mm-dd" );
     $(".datepicker").datepicker('option', {minDate: 0});
     $("#book_startdate").datepicker().datepicker("setDate", new Date());
-    $("#book_enddate").datepicker({
-    }).on("change", function(dateText) {
+    $("#book_enddate").datepicker().datepicker("setDate", new Date());
+    $("#showroom").click(function() {
+        if($("#book_startdate").datepicker().val() == ''){ return; }
+        if($("#book_enddate").datepicker().val() == ''){ return; }
         var data = loadContent('../data/roomdb.xml', '../data/roomdb.xml', '../data/roomdb_schema.xsd', '../pages/freerooms.xsl', 'loadFreeRooms',
-            { startdate: $("#book_startdate2").datepicker().val(), enddate: $("#book_enddate2").datepicker().val() });
+            { startdate: $("#book_startdate").datepicker().val(), enddate: $("#book_enddate").datepicker().val() });
         $('#content').empty().append($.parseHTML(data));
+        init();
     });
     $(".tabs").tabs({
         activate: function( event, ui ) {
@@ -185,7 +188,7 @@ function init()
         });
     });
     $(".bookroom").click(function() {
-        $roomid= $(this).parent().parent().parent().parent().attr('id');
+        $roomid = $(this).parent().parent().parent().find('table').attr('id');
         $("#bookroomdialog").dialog({
             modal: true,
             buttons: {
@@ -193,7 +196,7 @@ function init()
                     $bookstartdate = $('#book_startdate').val();
                     $bookenddate = $('#book_enddate').val();
                     $bookemail = $('#book_email').val();
-                    $booksalutation = $('#book_salutation').val();
+                    $booksalutation = $("#book_salutation option:selected").text();
                     $bookfirstname = $('#book_firstname').val();
                     $booklastname = $('#book_lastname').val();
                     $bookaddress = $('#book_address').val();
@@ -204,8 +207,6 @@ function init()
                         { roomid: $roomid, startdate: $bookstartdate, enddate: $bookenddate, email: $bookemail, salutation: $booksalutation, firstname: $bookfirstname, lastname: $booklastname, address: $bookaddress, zipcode: $bookzipcode, state: $bookstate, country: $bookcountry });
                     $( this ).dialog( "close" );
                     alert(data);
-                    //addBookingEntry($roomid, $bookstartdate, $bookenddate, $bookemail, $booksalutation, $bookfirstname, $booklastname, $bookaddress, $bookzipcode, $bookstate, $bookcountry);
-                    //doXSLT('pages/roomdb.xml','pages/rooms.xsl','content');
                     $( this ).dialog( "close" );
                 },
                 Abbrechen: function() {

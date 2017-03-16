@@ -134,6 +134,7 @@ function loadFreeRooms(){
         }
     }
     foreach ($removerooms as $removeroom) {
+        echo 'Remove room '.$removeroom->getAttribute('ID');
         $root=$xml->documentElement;
         $root->removeChild($removeroom);
     }

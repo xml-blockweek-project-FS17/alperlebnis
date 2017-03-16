@@ -25,9 +25,9 @@
                     </div>
                     <div id="tabs" class="tabs">
                         <ul>
-                            <li><a href="#tabs-1">Räume hinzufügen</a></li>
-                            <li><a href="#tabs-2">Angebote hinzufügen</a></li>
-                            <li><a href="#tabs-3">Räume verwalten</a></li>
+                            <li><a href="#tabs-1">Zimmer hinzufügen</a></li>
+                            <li><a href="#tabs-2">Zimmer verwalten</a></li>
+                            <li><a href="#tabs-3">Angebote hinzufügen</a></li>
                             <li><a href="#tabs-4">Angebote verwalten</a></li>
                         </ul>
                         <div id="tabs-1">
@@ -36,31 +36,31 @@
                                     <tr>
                                         <td class="eventLeftColumn">Raumname</td>
                                         <td>
-                                            <input type="text" name="add_roomname" id="add_roomname" autofocus="autofocus" size="30" required="required" />
+                                            <input type="text" name="add_roomname" id="add_roomname" placeholder="Raumname" autofocus="autofocus" size="30" required="required" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Preis</td>
                                         <td>
-                                            <input type="text" name="add_roomprice" id="add_roomprice" size="30"/>
+                                            <input type="number" name="add_roomprice" id="add_roomprice" placeholder="Preis" size="30"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Anz. Betten</td>
                                         <td>
-                                            <input type="text" name="add_roombeds" id="add_roombeds" size="30"/>
+                                            <input type="number" name="add_roombeds" id="add_roombeds" placeholder="Anz. Betten" size="30"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Bild</td>
                                         <td>
-                                            <input type="text" name="add_roomimage" id="add_roomimage" size="30" required="required"/>
+                                            <input type="url" name="add_roomimage" id="add_roomimage" placeholder="http://www.yourRaum.com/image.jpg" size="30" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Beschreibung</td>
                                         <td>
-                                            <textarea name="add_roombed" id="add_roomdescription" cols="24"/>
+                                            <textarea name="add_roombed" id="add_roomdescription" placeholder="Beschreibung" cols="24"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -76,66 +76,112 @@
                             <div style="clear: both;"></div>
                         </div>
                         <div id="tabs-2">
+                            <xsl:apply-templates select="document('../data/roomdb.xml')/hostelrooms"/>
+                            <div style="clear: both;"></div>
+                            <div id="deleteroomdialog" class="dialog" title="Raum löschen" style="display:none;">
+                                Sind Sie sich sicher, dass Sie den Raum entfernen möchten?
+                            </div>
+                            <div id="editroomdialog" class="dialog" title="Raum ändern" style="display:none;">
+                                <form method="post">
+                                    <table class="newRoomTable">
+                                        <tr>
+                                            <td class="eventLeftColumn">Raumname</td>
+                                            <td>
+                                                <input type="text" name="edit_roomname" id="edit_roomname" placeholder="Raumname" autofocus="autofocus" size="30" required="required" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="eventLeftColumn">Preis</td>
+                                            <td>
+                                                <input type="number" name="edit_roomprice" id="edit_roomprice" placeholder="Preis" size="30" required="required"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="eventLeftColumn">Anz. Betten</td>
+                                            <td>
+                                                <input type="number" name="edit_roombeds" id="edit_roombeds" placeholder="Anz. Betten" size="30" required="required"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="eventLeftColumn">Bild</td>
+                                            <td>
+                                                <input type="url" name="edit_roomimage" id="edit_roomimage" placeholder="http://www.yourRaum.com/image.jpg" size="30" required="required"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="eventLeftColumn">Beschreibung</td>
+                                            <td>
+                                                <textarea name="edit_roomdescription" id="edit_roomdescription" cols="24" required="required"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <br/>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="tabs-3">
                             <form method="post">
                                 <table class="newActivityTable">
                                     <tr>
                                         <td class="eventLeftColumn">Eventname</td>
                                         <td>
-                                            <input type="text" name="add_eventtitle" id="add_eventtitle" autofocus="autofocus" size="30" required="required" />
+                                            <input type="text" name="add_eventtitle" id="add_eventtitle" placeholder="Titel" autofocus="autofocus" size="30" required="required" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Ersteller</td>
                                         <td>
-                                            <input type="text" name="add_eventprovider" id="add_eventprovider" size="30"/>
+                                            <input type="text" name="add_eventprovider" id="add_eventprovider" placeholder="Ersteller" size="30" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Durchführungsdatum</td>
                                         <td>
-                                            <input type="date" name="add_eventactivitydate" id="add_eventactivitydate" placeholder="dd.MM.yyyy" size="9" class="datepicker"/>
+                                            <input type="text" name="add_eventactivitydate" id="add_eventactivitydate" placeholder="dd.MM.yyyy" size="9" class="datepicker" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Beschreibung</td>
                                         <td>
-                                            <textarea name="add_eventdescription" id="add_eventdescription" cols="24"/>
+                                            <textarea name="add_eventdescription" id="add_eventdescription" placeholder="Beschreibung" cols="24" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Bild</td>
                                         <td>
-                                            <input type="url" name="add_eventimage" id="add_eventimage" size="30" placeholder="http://www.yourEvent/image.jpg" required="required"/>
+                                            <input type="url" name="add_eventimage" id="add_eventimage" size="30" placeholder="http://www.yourEvent.com/image.jpg" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Kontakt Telefonnummer</td>
                                         <td>
-                                            <input type="text" name="add_eventcontact_phone" id="add_eventcontact_phone" placeholder="Tel. Nr" size="5"/>
+                                            <input type="tel" name="add_eventcontact_phone" id="add_eventcontact_phone" placeholder="Tel. Nr" size="30" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Kontakt E-Mail</td>
                                         <td>
-                                            <input type="text" name="add_eventcontact_email" id="add_eventcontact_email" placeholder="E-Mail" size="5"/>
+                                            <input type="email" name="add_eventcontact_email" id="add_eventcontact_email" placeholder="E-Mail" size="30" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="eventLeftColumn">Preis</td>
                                         <td>
-                                            <input type="text" name="add_eventprice" id="add_eventprice"/>
+                                            <input type="number" name="add_eventprice" placeholder="Preis" id="add_eventprice" size="30" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="eventLeftColumn">Anmeldedatum Start</td>
+                                        <td class="eventLeftColumn">Von</td>
                                         <td>
-                                            <input type="date" name="add_eventsignupstart" id="add_eventsignupstart" placeholder="dd.MM.yyyy" size="9" class="datepicker"/>
+                                            <input type="text" name="add_eventsignupstart" id="add_eventsignupstart" placeholder="dd.MM.yyyy" size="9" class="datepicker" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="eventLeftColumn">Anmeldedatum Ende</td>
+                                        <td class="eventLeftColumn">Bis</td>
                                         <td>
-                                            <input type="date" name="add_eventsignupend" id="add_eventsignupend" placeholder="dd.MM.yyyy" size="9" class="datepicker"/>
+                                            <input type="text" name="add_eventsignupend" id="add_eventsignupend" placeholder="dd.MM.yyyy" size="9" class="datepicker" required="required"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -150,52 +196,6 @@
                             </form>
                             <div style="clear: both;"></div>
                         </div>
-                        <div id="tabs-3">
-                            <xsl:apply-templates select="document('../data/roomdb.xml')/hostelrooms"/>
-                            <div style="clear: both;"></div>
-                            <div id="deleteroomdialog" class="dialog" title="Raum löschen" style="display:none;">
-                                Sind Sie sich sicher, dass Sie den Raum entfernen möchten?
-                            </div>
-                            <div id="editroomdialog" class="dialog" title="Raum ändern" style="display:none;">
-                                <form method="post">
-                                    <table class="newRoomTable">
-                                        <tr>
-                                            <td class="eventLeftColumn">Raumname</td>
-                                            <td>
-                                                <input type="text" name="edit_roomname" id="edit_roomname" autofocus="autofocus" size="30" required="required" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="eventLeftColumn">Preis</td>
-                                            <td>
-                                                <input type="text" name="edit_roomprice" id="edit_roomprice" size="30"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="eventLeftColumn">Anz. Betten</td>
-                                            <td>
-                                                <input type="text" name="edit_roombeds" id="edit_roombeds" size="30"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="eventLeftColumn">Bild</td>
-                                            <td>
-                                                <input type="text" name="edit_roomimage" id="edit_roomimage" size="30" required="required"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="eventLeftColumn">Beschreibung</td>
-                                            <td>
-                                                <textarea name="edit_roombed" id="edit_roomdescription" cols="24"/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <br/>
-                                        </tr>
-                                    </table>
-                                </form>
-                            </div>
-                        </div>
                         <div id="tabs-4">
                             <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
                             <div style="clear: both;"></div>
@@ -208,61 +208,61 @@
                                         <tr>
                                             <td class="eventLeftColumn">Eventname</td>
                                             <td>
-                                                <input type="text" name="edit_eventtitle" id="edit_eventtitle" autofocus="autofocus" size="30" required="required" />
+                                                <input type="text" name="edit_eventtitle" id="edit_eventtitle" placeholder="Titel" autofocus="autofocus" size="30" required="required" />
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="eventLeftColumn">Ersteller</td>
                                             <td>
-                                                <input type="text" name="edit_eventprovider" id="edit_eventprovider" size="30"/>
+                                                <input type="text" name="edit_eventprovider" id="edit_eventprovider" placeholder="Ersteller" size="30" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="eventLeftColumn">Durchführungsdatum</td>
                                             <td>
-                                                <input type="date" name="edit_eventactivitydate" id="edit_eventactivitydate" placeholder="dd.MM.yyyy" size="9" class="datepicker"/>
+                                                <input type="text" name="edit_eventactivitydate" id="edit_eventactivitydate" placeholder="dd.MM.yyyy" size="9" class="datepicker" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="eventLeftColumn">Beschreibung</td>
                                             <td>
-                                                <textarea name="edit_eventdescription" id="edit_eventdescription" cols="24"/>
+                                                <textarea name="edit_eventdescription" id="edit_eventdescription" placeholder="Beschreibung" cols="24" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="eventLeftColumn">Bild</td>
                                             <td>
-                                                <input type="url" name="edit_eventimage" id="edit_eventimage" size="30" placeholder="http://www.yourEvent/image.jpg" required="required"/>
+                                                <input type="url" name="edit_eventimage" id="edit_eventimage" size="30" placeholder="http://www.yourEvent.com/image.jpg" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="eventLeftColumn">Kontakt Telefonnummer</td>
                                             <td>
-                                                <input type="text" name="edit_eventcontact_phone" id="edit_eventcontact_phone" placeholder="Tel. Nr" size="5"/>
+                                                <input type="tel" name="edit_eventcontact_phone" id="edit_eventcontact_phone" placeholder="Tel. Nr" size="30" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="eventLeftColumn">Kontakt E-Mail</td>
                                             <td>
-                                                <input type="text" name="edit_eventcontact_email" id="edit_eventcontact_email" placeholder="E-Mail" size="5"/>
+                                                <input type="email" name="edit_eventcontact_email" id="edit_eventcontact_email" placeholder="E-Mail" size="30" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="eventLeftColumn">Preis</td>
                                             <td>
-                                                <input type="text" name="edit_eventprice" id="edit_eventprice"/>
+                                                <input type="number" name="edit_eventprice" id="edit_eventprice" placeholder="Preis" size="30" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="eventLeftColumn">Anmeldedatum Start</td>
+                                            <td class="eventLeftColumn">Von</td>
                                             <td>
-                                                <input type="date" name="edit_eventsignupstart" id="edit_eventsignupstart" placeholder="dd.MM.yyyy" size="9" class="datepicker"/>
+                                                <input type="text" name="edit_eventsignupstart" id="edit_eventsignupstart" placeholder="dd.MM.yyyy" size="9" class="datepicker" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="eventLeftColumn">Anmeldedatum Ende</td>
+                                            <td class="eventLeftColumn">Bis</td>
                                             <td>
-                                                <input type="date" name="edit_eventsignupend" id="edit_eventsignupend" placeholder="dd.MM.yyyy" size="9" class="datepicker"/>
+                                                <input type="text" name="edit_eventsignupend" id="edit_eventsignupend" placeholder="dd.MM.yyyy" size="9" class="datepicker" required="required"/>
                                             </td>
                                         </tr>
                                         <tr>
@@ -327,13 +327,13 @@
     <xsl:template name="booking">
         <table id="{./@ID}">
             <tr>
-                <td class="eventLeftColumn">Anmeldedatum Start</td>
+                <td class="eventLeftColumn">Von</td>
                 <td>
                     <xsl:value-of select="startdate"/>
                 </td>
             </tr>
             <tr>
-                <td class="eventLeftColumn">Anmeldedatum Ende</td>
+                <td class="eventLeftColumn">Bis</td>
                 <td>
                     <xsl:value-of select="enddate"/>
                 </td>
