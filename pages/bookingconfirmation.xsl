@@ -18,10 +18,8 @@
 																				</fo:block>
 																</fo:static-content>
 																<fo:flow flow-name="xsl-region-body">
-																				<fo:block>
-																					<fo:external-graphic src="http://xml-f17.enterpriselab.ch/~tbdisler/data/pictures/header.png" content-height="scale-to-fit" height="1in" content-width="6.3in" scaling="non-uniform"/>
-																				</fo:block>
-																				<fo:block font-size="19pt" font-family="sans-serif" line-height="24pt" space-after.optimum="20pt" background-color="red" color="white" text-align="center" padding-top="5pt" padding-bottom="5pt">Buchungsbestätigung</fo:block>
+																				
+																				<fo:block font-size="19pt" font-family="sans-serif" line-height="24pt" space-after.optimum="20pt" background-color="red" color="white" text-align="center" padding-top="5pt" padding-bottom="5pt">Buchungsbestätigung Alperlebnis+</fo:block>
 																				<xsl:apply-templates />
 																</fo:flow>
 												</fo:page-sequence>
@@ -36,6 +34,41 @@
 												<fo:table-body>
 																<fo:table-row>
 																				<fo:table-cell number-columns-spanned="2">
+																								<fo:block padding-top="2pt">
+																												Sehr geehrte/r <xsl:value-of select="bookingaddress/salutation"/>&#160;<xsl:value-of select="bookingaddress/lastname"/> 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>																
+																				<fo:table-cell padding-top="2pt" number-columns-spanned="2">
+																								<fo:block padding-top="2pt">
+																												Vielen Dank für die Buchung bei Alperlebnis+. 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell padding-top="2pt" number-columns-spanned="3">
+																								<fo:block padding-top="2pt">
+																												Nachfolgend finden Sie Ihre Buchungsbestätigung. Sollten Sie Fragen haben, können Sie sich gerne mit uns in Verbindung setzten. 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell padding-top="3pt" number-columns-spanned="2">
+																								<fo:block padding-top="2pt">
+																												Wir wünschen Ihnen einen angenehmen Aufenthalt. 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell padding-top="8pt" number-columns-spanned="2">
+																								<fo:block padding-top="2pt">
+																												Ihr Alplerlebnis+ Team 
+																								</fo:block>
+																				</fo:table-cell>
+																</fo:table-row>
+																<fo:table-row>
+																				<fo:table-cell padding-top="30pt" number-columns-spanned="2">
 																								<fo:block font-size="14pt" color="red" font-weight="900" text-align="left">
 																												Raumname: <xsl:value-of select="roomname"/>
 																								</fo:block>
@@ -48,6 +81,7 @@
 																								</fo:block>
 																				</fo:table-cell>
                                                                 </fo:table-row>
+                                                                
                                                                 <fo:table-row>
 																				<fo:table-cell padding-top="4pt" number-columns-spanned="2" padding-bottom="4pt">
 																								<fo:block>
@@ -70,7 +104,7 @@
 																				</fo:table-cell>
 																</fo:table-row>
                                                                 <fo:table-row>
-																				<fo:table-cell padding-top="3pt" number-columns-spanned="2" padding-bottom="1pt">
+																				<fo:table-cell padding-top="7pt" number-columns-spanned="2" padding-bottom="1pt">
 																								<fo:block>
 																												Buchungsadresse: 
 																								</fo:block>
