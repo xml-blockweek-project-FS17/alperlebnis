@@ -1,7 +1,6 @@
 <?php
 
 function validateDataXml($database, $schema) {
- 
     // Load data xml
     $xml = new DOMDocument;
     $xml->validateOnParse = true;
@@ -14,7 +13,6 @@ function validateDataXml($database, $schema) {
 }
 
 function transformXml($xml_file, $xsd_file, $xsl_file, $message) {
- 
     // validate data.xml on each page request
     validateDataXml($xml_file, $xsd_file);
  
@@ -47,13 +45,9 @@ function transformXml($xml_file, $xsd_file, $xsl_file, $message) {
     // Attach the xsl rules
     
     echo $proc->transformToXML($xml);
-    
-    
-    
 }
 
 function loadActivityData($xml_file, $xsd_file, $xsl_file, $id, $message) {
- 
     // validate data.xml on each page request
     validateDataXml($xml_file, $xsd_file);
  
@@ -119,13 +113,9 @@ function loadActivityData($xml_file, $xsd_file, $xsl_file, $id, $message) {
     // Attach the xsl rules
     
     echo $proc->transformToXML($xml);
-    
-    
-    
 }
     
 function deleteActivity($id){
- 
     // validate data.xml
     validateDataXml("../data/activitydb.xml","../data/activitydb_schema.xsd");
     $dom=new DOMDocument();
@@ -220,13 +210,10 @@ function writeNewActivity($title, $creator, $contact, $price, $date, $start, $en
         $dom->save('../data/activitydb.xml');
         transformXml("../data/activitydb.xml", "../data/activitydb_schema.xsd", "../pages/activitymanagement.xsl","Ihr Angebot wurde erfolgreich erstellt!" );
     }
-    
-    
 }
 
 
 function editActivity($id, $title, $creator, $price, $date, $start, $end, $tel, $email, $desc, $img){
- 
     validateDataXml("../data/activitydb.xml","../data/activitydb_schema.xsd");
     $dom=new DOMDocument();
     $dom->validateOnParse = true;

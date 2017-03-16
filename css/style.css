@@ -94,20 +94,25 @@ button:hover {
     width:970px;
 }
 
-.activityImage{
-     border-radius: 5px 5px 0px 0px;
-     -webkit-border-radius: 5 5 0 0;
+.activityImage, .roomImage {
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5 5 0 0;
     -moz-border-radius: 5 5 0 0;
-    background-size:cover;
-    height:240px;
-    position:relative;
+    background-size: cover;
+    height: 240px;
+    position: relative;
 }
-
 
 
 .itemTable{
     text-align: left;
     padding:0px 10px 10px 10px;
+    border-spacing: 10px
+}
+
+.roomitemTable, .activityitemTable{
+    text-align: left;
+    padding:0px 10px 0px 10px;
     border-spacing: 10px
 }
 
@@ -193,17 +198,29 @@ input[type=submit]{
     width: 266px;
 }
 
-.roomitem
-{
-    width: 380px;
-    max-height: 300px;
-    height: 300px;
-}
-
 .activityitem
 {
     width: 468px;
     min-height: 570px;
+}
+
+.roomitem
+{
+    width: 468px;
+    min-height: 450px;
+}
+
+.adminroomitem
+{
+    width: 445px;
+    min-height: 420px;
+    height: 420px;
+}
+
+.adminactivityitem{
+    width: 445px;
+    min-height: 580px;
+    height: 580px;
 }
 
 .itemvaluename
@@ -231,6 +248,7 @@ input[type=submit]{
     margin-left: 7px;
     margin-top: 15px;
     float: left;
+    text-align: left;
     font-size: 14px;
      border-radius: 5px;
      -webkit-border-radius: 5;
@@ -282,4 +300,170 @@ input[type=submit]{
     background-position: center;
 }
 
+.showbookingButton{
+    position:absolute;
+    bottom:0px;
+    right:80px;
+    background-image: url("../data/pictures/bookings.png");
+    background-size: 20px 20px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
 
+.showbookingButton:hover{
+    background-image: url("../data/pictures/bookings.png");
+    background-size: 22px 22px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bookingButton{
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    background-image: url("../data/pictures/bookings.png");
+    background-size: 20px 20px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
+
+.bookingButton:hover{
+    background-image: url("../data/pictures/bookings.png");
+    background-size: 22px 22px;
+    background-repeat: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bookroom
+{
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em;
+}
+
+.ui-dialog
+{
+    width: auto !important;
+}
+
+.roomitemname, .roomitempricecurrency, .roomitemprice, .roomitembeds, .roomitemdescription, .eventitemtitle, .eventitemprovider, .eventitempricecurrency, .eventitemprice, .eventitemactivitydate, .eventitemsignupstart, .eventitemsignupend, .eventitemphone, .eventitememail, .eventitemdescription
+{
+    display:inline;
+}
+
+.bookingsdialog{
+    text-align: left;
+}
+
+.eventLeftColumn{
+    font-weight: bold;
+}
+
+.adminroombuttons, .adminactivitybuttons{
+    padding-bottom: 10px;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover
+{
+    //background: #007fff none repeat scroll 0 0;
+    background: #eb3232 linear-gradient(to bottom, #eb3232, #b81a1a) repeat scroll 0 0;
+}
+
+.newActivityTable{
+    border-radius: 5px;
+    border-bottom-color: #b3b3b3;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #b3b3b3;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #b3b3b3;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #b3b3b3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    /* padding: 5px; */
+    text-align: left;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 445px;
+    margin-left: 7px;
+    margin-right: 7px;
+    height: auto;
+    float: left;
+    margin-top: 15px;
+}
+.newRoomTable{
+    border-radius: 5px;
+    border-bottom-color: #b3b3b3;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #b3b3b3;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #b3b3b3;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #b3b3b3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    /* padding: 5px; */
+    text-align: left;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 445px;
+    margin-left: 7px;
+    margin-right: 7px;
+    height: auto;
+    float: left;
+    margin-top: 15px;
+}
+
+.newBookingTable{
+    border-radius: 5px;
+    border-bottom-color: #b3b3b3;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #b3b3b3;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #b3b3b3;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #b3b3b3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    /* padding: 5px; */
+    text-align: left;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    width: 445px;
+    margin-left: 7px;
+    margin-right: 7px;
+    height: auto;
+    float: left;
+    margin-top: 15px;
+}

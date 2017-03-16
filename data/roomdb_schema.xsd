@@ -4,6 +4,7 @@
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
                 <xs:element ref="room"/>
             </xs:sequence>
+            <xs:attribute name="nextRoomId" type="xs:positiveInteger"/>
         </xs:complexType>
     </xs:element>
 
@@ -19,11 +20,12 @@
                         <xs:sequence minOccurs="0" maxOccurs="unbounded">
                                 <xs:element ref="booking"/>
                         </xs:sequence>
+                        <xs:attribute name="nextBookingId" type="xs:positiveInteger"/>
                     </xs:complexType>
                 </xs:element>
-               
             </xs:sequence>
             <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="ID" type="xs:positiveInteger"/>
         </xs:complexType>
     </xs:element>
 
@@ -38,6 +40,7 @@
                 <xs:element name="paidprice" type="xs:float"/>
                 <xs:element ref="bookingaddress"/>
             </xs:sequence>
+            <xs:attribute name="ID" type="xs:positiveInteger"/>
         </xs:complexType>
     </xs:element>
 
