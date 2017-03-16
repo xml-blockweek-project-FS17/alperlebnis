@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
 				
 				<xsl:template match="activities">
 								<fo:root>
@@ -18,7 +18,8 @@
 																				</fo:block>
 																</fo:static-content>
 																<fo:flow flow-name="xsl-region-body">
-																				<fo:block font-size="19pt" font-family="sans-serif" line-height="24pt" space-after.optimum="20pt" background-color="red" color="white" text-align="center" padding-top="5pt" padding-bottom="5pt">Alperlebnis+ Eventangebote</fo:block><!-- For each movie ...  -->
+																				<fo:block font-size="19pt" font-family="sans-serif" line-height="24pt" space-after.optimum="20pt" background-color="red" color="white" text-align="center" padding-top="5pt" padding-bottom="5pt">Alperlebnis+ Eventangebote</fo:block>
+																				
 																				<xsl:apply-templates />
 																</fo:flow>
 												</fo:page-sequence>
@@ -26,8 +27,6 @@
 				</xsl:template>
 				
 				<xsl:template match="activity">
-					
-					<xsl:if test="xs:date(signupstart) &lt;= current-date() and current-date() &lt;=xs:date(signupend)">
 								<fo:table space-after.optimum="20pt" width="13cm" font-size="11pt">
 												<fo:table-column column-number="1"/>
 												<fo:table-column column-number="2"/>
@@ -41,9 +40,7 @@
 																				</fo:table-cell>
 																				<fo:table-cell number-rows-spanned="10">
 																								<fo:block>
-																												<!--<fo:external-graphic src="xml-f17.enterpriselab.ch/~tbdisler/data/pictures/Stall_Bes.jpg" border-width="0cm" width="2.5cm" height="2.5cm"/>-->
-																												<fo:external-graphic src="{image/@href}" content-height="scale-to-fit" height="2.5in"  content-width="2.5in" scaling="non-uniform"/>
-																												
+																												<fo:external-graphic src="{image}" content-height="scale-to-fit" height="2.5in"  content-width="2.5in" scaling="non-uniform"/>
 																								</fo:block>
 																				</fo:table-cell>
 																</fo:table-row>
@@ -111,8 +108,6 @@
 																				</fo:table-cell>
 																</fo:table-row>
 												</fo:table-body>
-								</fo:table>
-					</xsl:if>
-					
+								</fo:table>	
 				</xsl:template>
 </xsl:stylesheet>
