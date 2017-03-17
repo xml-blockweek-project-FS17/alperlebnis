@@ -13,7 +13,7 @@
     <xsl:variable name="fromDateNum" select="number(translate($fromDate, '-', ''))"/>
     <xsl:variable name="toDateNum" select="number(translate($toDate, '-', ''))"/>
 
-    <xsl:variable name="occupiedRooms" select="count(//room/bookings/booking[number(translate(startdate, '-', '')) &gt;= $fromDateNum and number(translate(enddate, '-', '')) &lt;= $toDateNum])" />
+    <xsl:variable name="occupiedRooms" select="count(//room/bookings/booking[number(translate(startdate, '-', '')) &gt;= $fromDateNum and number(translate(enddate, '-', '')) &lt;= $toDateNum]/../..)" />
     <xsl:variable name="totalRooms" select="count(//room)" />
     <xsl:variable name="freeRooms" select="$totalRooms - $occupiedRooms" />
 
