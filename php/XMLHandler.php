@@ -103,7 +103,7 @@ function loadFreeRooms(){
 
     $removerooms = array();
 
-    // get event
+    // get rooms
     $rooms = $xml->getElementsByTagName("room");
     foreach ($rooms as $room) {
         foreach($room->childNodes as $roomattrib){ // All attributes
@@ -170,7 +170,7 @@ function editEvent(){
     $dom->validateOnParse = true;
     $dom->load($sourceFile);
 
-    // get event
+    // get activities
     $events = $dom->getElementsByTagName("activity");
     foreach ($events as $event) {
         if ($event->getAttribute("ID") == $eventid)
@@ -197,7 +197,6 @@ function editEvent(){
         {
             $dom->save($targetFile);
             echo 'Ihr Angebot erfolgreich editiert!';
-            //transformXml($targetFile, $GLOBALS['xsdfile'], $_POST['xslfile'], array('message'=>'Ihr Zimmer wurde erfolgreich erstellt!'));
         }
         else
         {
@@ -292,7 +291,6 @@ function writeNewEvent(){
     {
         $dom->save($targetFile);
         echo 'Ihr Angebot wurde erfolgreich erstellt!';
-        //transformXml($targetFile, $GLOBALS['xsdfile'], $_POST['xslfile'], array('message'=>'Ihr Zimmer wurde erfolgreich erstellt!'));
     }
     else
     {
@@ -326,7 +324,6 @@ function deleteEvent(){
         $deleteroot->removeChild($toRemove);
         $dom->save($targetFile);
         echo 'Angebot wurde erfolgreich gelöscht!';
-        //transformXml($targetFile, $GLOBALS['xsdfile'], $GLOBALS['xslfile'], array('message'=>'Angebot wurde erfolgreich gelöscht!'));
     }
 }
 
@@ -346,7 +343,7 @@ function editRoom(){
     $dom->validateOnParse = true;
     $dom->load($sourceFile);
 
-    // get event
+    // get rooms
     $rooms = $dom->getElementsByTagName("room");
     foreach ($rooms as $room) {
         if ($room->getAttribute("ID") == $roomid)
@@ -368,7 +365,6 @@ function editRoom(){
         {
             $dom->save($targetFile);
             echo 'Ihr Zimmer erfolgreich editiert!';
-            //transformXml($targetFile, $GLOBALS['xsdfile'], $_POST['xslfile'], array('message'=>'Ihr Zimmer wurde erfolgreich erstellt!'));
         }
         else
         {
@@ -436,7 +432,6 @@ function writeNewRoom(){
     {
         $dom->save($targetFile);
         echo 'Ihr Zimmer wurde erfolgreich erstellt!';
-        //transformXml($targetFile, $GLOBALS['xsdfile'], $_POST['xslfile'], array('message'=>'Ihr Zimmer wurde erfolgreich erstellt!'));
     }
     else
     {
@@ -468,7 +463,7 @@ function writeNewBooking(){
     $dom->validateOnParse = true;
     $dom->load($sourceFile);
 
-    // get event
+    // get rooms
     $rooms = $dom->getElementsByTagName("room");
     foreach ($rooms as $room) {
         if ($room->getAttribute("ID") == $roomid)
@@ -549,7 +544,6 @@ function writeNewBooking(){
             addLastBooking($roomname, $id);
 
             echo 'Ihr Buchung wurde erfolgreich erstellt!';
-            //transformXml($targetFile, $GLOBALS['xsdfile'], $_POST['xslfile'], array('message'=>'Ihr Zimmer wurde erfolgreich erstellt!'));
         }
         else
         {
@@ -679,14 +673,12 @@ function deleteRoom(){
         $root->removeChild($toRemove);
         $dom->save($targetFile);
         echo 'Zimmer wurde erfolgreich gelöscht!';
-        //transformXml($targetFile, $GLOBALS['xsdfile'], $GLOBALS['xslfile'], array('message'=>'Zimmer wurde erfolgreich gelöscht!'));
     }
 }
 
 function datesOverlap($start_one,$end_one,$start_two,$end_two) {
 
     if($start_one <= $end_two && $end_one >= $start_two) { //If the dates overlap
-        //return min($end_one,$end_two)->diff(max($start_two,$start_one))->days + 1; //return how many days overlap
         return true;
     }
 
