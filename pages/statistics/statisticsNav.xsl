@@ -36,7 +36,7 @@
                     <br />
 
                     <button name="actionId" type="submit" value="roomPrice">Zimmerpreise</button>
-                    <button name="actionId" type="submit" value="roomOcc">Übersicht Angebote</button>
+                    <button name="actionId" type="submit" value="roomOcc">Zimmerbelegung</button>
                     <button name="actionId" type="submit" value="totalEarn">Totale Einnahmen</button>
                 </form>
                 <!--
