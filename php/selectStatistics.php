@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $endDate = $_POST['endDate'];
     $actionId = $_POST['actionId'];
 
-    if($actionId == "wins"){
-        showStatistic("../data/roomdb.xml", "../data/roomdb_schema.xsd", "../pages/statistics/statisticsEarn.xsl", $startDate, $endDate);
+    if($actionId == "roomPrice"){
+        showStatistic("../data/roomdb.xml", "../data/roomdb_schema.xsd", "../pages/statistics/statisticsRoomPrices.xsl", $startDate, $endDate);
     } elseif ($actionId == "activities"){
 
     }

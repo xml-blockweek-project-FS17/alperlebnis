@@ -27,17 +27,17 @@
 
                 <h3>Wählen Sie das gewünschte Zeitfenster für Ihre Statistik</h3>
                 <form class="statisticsSelectionForm" action="{$form_action}" method="post">
+                    <!--
                     <label for="startDate">Von: </label>
-                   <!-- <input type="text" id="startDate" name="startDate" value="YYYY-MM-DD" maxlength="10"></input>-->
                     <input type="text" id="startDate" name="startDate" value="2013-03-16" maxlength="10"></input>
                     <br />
                     <label for="endDate">Bis: </label>
                     <input type="text" id="endDate" name="endDate" value="2019-03-16"></input>
-                  <!--  <input type="text" id="endDate" name="endDate" value="{$today}"></input>-->
+                    -->
                     <br />
                     <br />
 
-                    <button name="actionId" type="submit" value="wins">Zimmerpreise</button>
+                    <button name="actionId" type="submit" value="roomPrice">Zimmerpreise</button>
                     <br />
                     <!--
                     <button name="actionId" type="submit" value="activities">Übersicht Angebote</button>
