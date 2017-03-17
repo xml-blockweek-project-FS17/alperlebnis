@@ -32,9 +32,10 @@
                         <ul>
                             <li><a href="#tabs-1">Zimmer hinzufügen</a></li>
                             <li><a href="#tabs-2">Zimmer verwalten</a></li>
-                            <li><a href="#tabs-3">Aktivitäten hinzufügen</a></li>
-                            <li><a href="#tabs-4">Aktivitäten verwalten</a></li>
-                            <li><a href="#tabs-5">Aktivitäten Flyer generieren</a></li>
+                            <li><a href="#tabs-3">Zimmer Statistiken</a></li>
+                            <li><a href="#tabs-4">Aktivitäten hinzufügen</a></li>
+                            <li><a href="#tabs-5">Aktivitäten verwalten</a></li>
+                            <li><a href="#tabs-6">Flyer generieren</a></li>
                         </ul>
                         <div id="tabs-1">
                             <form method="post">
@@ -128,6 +129,9 @@
                             </div>
                         </div>
                         <div id="tabs-3">
+                            <button id="statistics" title="Statistiken">Statistiken</button>
+                        </div>
+                        <div id="tabs-4">
                             <form method="post">
                                 <table class="newActivityTable">
                                     <tr>
@@ -202,7 +206,7 @@
                             </form>
                             <div style="clear: both;"></div>
                         </div>
-                        <div id="tabs-4">
+                        <div id="tabs-5">
                             <xsl:apply-templates select="document('../data/activitydb.xml')/activities"/>
                             <div style="clear: both;"></div>
                             <div id="deleteeventdialog" class="dialog" title="Angebot löschen" style="display:none;">
@@ -278,7 +282,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="tabs-5">
+                        <div id="tabs-6">
                             <form action="../php/FO/generate-activities.php" method="post">
                                 <input class="button" type="submit" value="Flyer generieren"></input>
                             </form>

@@ -573,3 +573,7 @@ input[type=submit]{
     background-color:#d39e00;
 }
 */
+
+.navbuttons{
+    width: 25% !important;
+}

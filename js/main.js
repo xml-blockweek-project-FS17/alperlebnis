@@ -229,4 +229,11 @@ function init()
         if($roomid == ''){ return; }
         $(".bookingsdialog[roomid="+$roomid+"]").dialog();
     });
+    $("#statistics").click(function() {
+        location.href='../pages/statistics.xml';
+    });
+    $("#startDate").datepicker();
+    $("#startDate").datepicker("option", "dateFormat", "yy-mm-dd" );
+    $("#endDate").datepicker();
+    $("#endDate").datepicker("option", "dateFormat", "yy-mm-dd" );
 }
