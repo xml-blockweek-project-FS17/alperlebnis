@@ -477,3 +477,10 @@ input[type=submit]{
     overflow-x: hidden !important;
     overflow-y: auto !important;
 }
+
+#shownobookingsdialog.ui-dialog-content{
+    width: auto !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}

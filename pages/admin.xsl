@@ -317,9 +317,18 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <div id="showbookingsdialog" title="Zimmerbuchungen {./@name}" class="bookingsdialog" roomid="{./@ID}" style="display:none;">
-                        <xsl:apply-templates select="bookings"/>
-                    </div>
+                    <xsl:choose>
+                        <xsl:when test="count(bookings/booking) = 0">
+                            <div id="shownobookingsdialog" title="Zimmerbuchungen {./@name}" class="bookingsdialog" roomid="{./@ID}" style="display:none; height: 100px;">
+                                Keine Buchungen vorhanden
+                            </div>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <div id="showbookingsdialog" title="Zimmerbuchungen {./@name}" class="bookingsdialog" roomid="{./@ID}" style="display:none; height: 100px;">
+                                <xsl:apply-templates select="bookings"/>
+                            </div>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </td>
             </tr>
         </table>
