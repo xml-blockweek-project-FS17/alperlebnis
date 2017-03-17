@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"><fo:layout-master-set><fo:simple-page-master master-name="event_list" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="2cm" margin-left="2.5cm" margin-right="2.5cm"><fo:region-body margin-top="1cm"/><fo:region-before extent="2cm"/><fo:region-after extent="3cm"/></fo:simple-page-master></fo:layout-master-set><fo:page-sequence master-reference="event_list"><fo:static-content flow-name="xsl-region-before"><fo:block text-align="center" font-size="8pt">
+																								Alperlebnis+ Eventangebote  /  Seite
+																								<fo:page-number/></fo:block></fo:static-content><fo:flow flow-name="xsl-region-body"><fo:block font-size="19pt" font-family="sans-serif" line-height="24pt" space-after.optimum="20pt" background-color="red" color="white" text-align="center" padding-top="5pt" padding-bottom="5pt">Alperlebnis+ Eventangebote</fo:block>
+    
+        <fo:table space-after.optimum="20pt" width="13cm" font-size="11pt"><fo:table-column column-number="1"/><fo:table-column column-number="2"/><fo:table-column column-number="3"/><fo:table-body><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block font-size="14pt" color="red" font-weight="900" text-align="left">Stallbesichtigung</fo:block></fo:table-cell><fo:table-cell number-rows-spanned="10"><fo:block><fo:external-graphic src="http://staufer.at/wp-content/uploads/2013/09/Stall-2.jpg" content-height="scale-to-fit" height="2.5in" content-width="2.5in" scaling="non-uniform"/></fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="2pt" number-columns-spanned="1"><fo:block>Die heile Bergwelt bei einem Schweizer Bergbauern erleben und selbst Hand anlegen.&#xD;</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="4pt" number-columns-spanned="2" padding-bottom="4pt"><fo:block>
+																												Veranstalter: Bauern Verein HSLU</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2" padding-bottom="4pt"><fo:block>
+																												Veranstaltungsdatum: 2017-09-30</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="3pt" number-columns-spanned="2" padding-bottom="1pt"><fo:block>
+																												Anmeldungszeitraum 
+																								</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block>2017-03-15 bis 2017-09-30</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="6pt" number-columns-spanned="2" padding-bottom="1pt"><fo:block>
+																												Anmeldung per:
+																								</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block>
+																												Telefon: +41 41 777 77 75</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block>
+																												E-Mail: bauern.verein@hslu.ch</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="7pt" number-columns-spanned="2" padding-bottom="4pt"><fo:block>
+																												Preis: 500.00 Fr.
+																								</fo:block></fo:table-cell></fo:table-row></fo:table-body></fo:table>
+		
+    <fo:table space-after.optimum="20pt" width="13cm" font-size="11pt"><fo:table-column column-number="1"/><fo:table-column column-number="2"/><fo:table-column column-number="3"/><fo:table-body><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block font-size="14pt" color="red" font-weight="900" text-align="left">Wildwasser im Bergfluss</fo:block></fo:table-cell><fo:table-cell number-rows-spanned="10"><fo:block><fo:external-graphic src="http://www.rafting.com/wp-content/gallery/penn/2006_0721image0005.jpg" content-height="scale-to-fit" height="2.5in" content-width="2.5in" scaling="non-uniform"/></fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="2pt" number-columns-spanned="1"><fo:block>Geniessen Sie die frische Alpenluft, w&#xE4;hrend Sie einen Bergfluss herunterfahren.</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="4pt" number-columns-spanned="2" padding-bottom="4pt"><fo:block>
+																												Veranstalter: Raftingverband HSLU</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2" padding-bottom="4pt"><fo:block>
+																												Veranstaltungsdatum: 2017-07-30</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="3pt" number-columns-spanned="2" padding-bottom="1pt"><fo:block>
+																												Anmeldungszeitraum 
+																								</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block>2017-03-03 bis 2017-06-30</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="6pt" number-columns-spanned="2" padding-bottom="1pt"><fo:block>
+																												Anmeldung per:
+																								</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block>
+																												Telefon: 041 777 77 77</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell number-columns-spanned="2"><fo:block>
+																												E-Mail: hslu@hslu.ch</fo:block></fo:table-cell></fo:table-row><fo:table-row><fo:table-cell padding-top="7pt" number-columns-spanned="2" padding-bottom="4pt"><fo:block>
+																												Preis: 200 Fr.
+																								</fo:block></fo:table-cell></fo:table-row></fo:table-body></fo:table>    
+</fo:flow></fo:page-sequence></fo:root>

@@ -34,6 +34,7 @@
                             <li><a href="#tabs-2">Zimmer verwalten</a></li>
                             <li><a href="#tabs-3">Aktivitäten hinzufügen</a></li>
                             <li><a href="#tabs-4">Aktivitäten verwalten</a></li>
+                            <li><a href="#tabs-5">Aktivitäten Flyer generieren</a></li>
                         </ul>
                         <div id="tabs-1">
                             <form method="post">
@@ -277,6 +278,13 @@
                                 </form>
                             </div>
                         </div>
+                        <div id="tabs-5">
+                            <form action="../php/FO/generate-activities.php" method="post">
+                                <input class="button" type="submit" value="Flyer generieren"></input>
+                            </form>
+                            
+                        </div>
+                        
                     </div>
                     <div style="clear:both;"></div>
                     <br/>
