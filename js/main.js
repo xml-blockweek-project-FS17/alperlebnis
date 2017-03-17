@@ -118,7 +118,7 @@ function init()
         $eventsignupstart = $("#add_eventsignupstart").val();
         $eventsignupend = $("#add_eventsignupend").val();
         if($eventtitle == '' || $eventprovider == '' || $eventactivitydate == '' || $eventdescription == '' || $eventimage == '' || $eventcontact_phone == '' || $eventcontact_email == '' || $eventprice == '' || $eventsignupstart == '' || $eventsignupend == ''){ return; }
-        var data = loadContent('../data/activitydb.xml', '../data/activitydb.xml', '../data/activitydb_schema.xsd', '../pages/activity.xsl', 'writeNewActivity',
+        var data = loadContent('../data/activitydb.xml', '../data/activitydb.xml', '../data/activitydb_schema.xsd', '../pages/activity.xsl', 'writeNewEvent',
             { title: $eventtitle, provider: $eventprovider, activitydate: $eventactivitydate, description: $eventdescription, image: $eventimage,
                 contact_phone: $eventcontact_phone, contact_email: $eventcontact_email, price: $eventprice, signupstart: $eventsignupstart, signupend: $eventsignupend });
         alert(data);
