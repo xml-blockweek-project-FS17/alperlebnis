@@ -9,8 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if($actionId == "roomPrice"){
         showStatistic("../data/roomdb.xml", "../data/roomdb_schema.xsd", "../pages/statistics/statisticsRoomPrices.xsl", $startDate, $endDate);
-    } elseif ($actionId == "activities"){
-
+    } elseif ($actionId == "roomEarn"){
+        showStatistic("../data/roomdb.xml", "../data/roomdb_schema.xsd", "../pages/statistics/statisticsRoomEarn.xsl", $startDate, $endDate);
+    } elseif  ($actionId == "roomOcc") {
+        showStatistic("../data/roomdb.xml", "../data/roomdb_schema.xsd", "../pages/statistics/statisticsRoomOcc.xsl", $startDate, $endDate);
     }
 }
 
